@@ -1,209 +1,103 @@
-import Head from 'next/head'
+import React, { useState } from 'react';
+import { darkTheme, lightTheme} from '../themes/themes';
+import Switch from '@mui/material/Switch';
+import Typography from '@mui/material/Typography';
+import { Paper, CssBaseline, Card } from '@mui/material/';
+import { ThemeProvider } from '@mui/material/styles';
+import { useLovelySwitchStyles } from '@mui-treasury/styles/switch/lovely';
+import Brightness3Icon from '@mui/icons-material/Brightness3';
+import Brightness5Icon from '@mui/icons-material/Brightness5';
+import SvgIcon from '@mui/material/SvgIcon';
+import Avatar from '@mui/material/Avatar';
 
-export default function Home() {
+//---------------------------------------------------------------------------------------------------------
+
+function Home() {
+  const [mode, setMode] = useState(false);
+  function myAge() { //calculates my age
+    const today = new Date();
+    const birthDate = new Date(2004,8,6);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const month = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+      return age;
+    };
+  const Bstyle1 = useLovelySwitchStyles();
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
+    <div>         
+        <ThemeProvider theme={mode ? darkTheme : lightTheme}>
+          <CssBaseline/>
+            <Paper 
+            style={{ height: "40vh" }}
+            sx={{
+                bgcolor: 'info.main', 
+                position: 'absolute', left: '50%', top: '15.5%',
+                transform: 'translate(-50%, -50%)',
+                width: '100%',
+                marginTop: -1,
+                padding:7,
+                borderRadius:15
+            }} 
+            elevation={15}>
+            <Typography
+                variant= 'h1'
+                align= 'center'> 
+                Morne's Portfolio </Typography>
+            <Typography
+              variant= 'h5'
+              align= 'center'>
+              Welcome to my Website!</Typography>
+            <SvgIcon component={Brightness3Icon} inheritViewBox sx={{position: 'absolute', left: '53%', top: '68%', transform: 'translate(-50%, -50%)',}}/>
+            <SvgIcon component={Brightness5Icon} inheritViewBox sx={{position: 'absolute', left: '47%', top: '68%', transform: 'translate(-50%, -50%)',}}/>
+            </Paper>
+            <Switch checked={mode} color= 'primary' onChange={() => setMode(!mode)} sx={{position: 'absolute', left: '50%', top: '22%', transform: 'translate(-50%, -50%)', padding: 0.0, border:0.5, borderRadius: 8, borderColor: 'primary', }}/>
+        <Paper
+        style={{ height: '55vh'}}
+        sx={{
+          bgcolor: 'primary.light', 
+          position: 'absolute', left: '80%', top: '65%',
+          transform: 'translate(-50%, -50%)',
+          width: '35%',
+          marginTop: -1,
+          padding:5,
+          borderRadius:3
+        }}
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+          <Avatar       
+            alt= 'blank'
+            src= '../nothing.jpg' 
+            sx={{ width: 175, height: 175, position: 'absolute', left: '-20%', top: '30%', transform: 'translate(-50%, -50%)',}}/>
+          <Typography
+            variant= 'h3'
+            align= 'center'
+            sx={{ textDecoration: 'underline'}}>
+            About Me
+          </Typography>
+          <Typography
+            align= 'center'
+            variant= 'h6'
+            mt= {3}
+            >
+            Hi! My name is Morné Cornelius, 
+            I am {myAge()} and have had a computer since I was 3 years old and had a blast since then, 
+            I started with gaming and slowly began to get fond of how programs work, 
+            my father taught me the basics of how to operate a computer, 
+            and I taught myself the rest, 
+            I have been stuck with several problems over the few years but always ended up fixing them. 
+            If I encounter a problem, 
+            I never leave it be.  
+            I taught myself C++ when I was 12, 
+            and ended up wanting to master JavaScript
+            I am still extremely new to programming, 
+            I am not planning on going to university, 
+            but want to get taught via a company and pure experience.
+          </Typography>
+        </Paper>
+        </ThemeProvider>
     </div>
-  )
-}
+)};
+ 
+export default Home;
