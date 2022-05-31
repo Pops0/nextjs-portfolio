@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { darkTheme, lightTheme} from '../themes/themes';
+import { darkTheme, lightTheme} from '../customization/themes';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import { Paper, CssBaseline, Card } from '@mui/material/';
