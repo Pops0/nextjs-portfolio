@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from 'react';
 import { darkTheme, lightTheme} from '../customization/themes';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
-import { Paper, CssBaseline, TextField, Card, Grid } from '@mui/material/';
+import { Paper, CssBaseline, Grid } from '@mui/material/';
 import { ThemeProvider } from '@mui/material/styles';
 import Brightness3Icon from '@mui/icons-material/Brightness3';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
@@ -14,7 +16,6 @@ const weather = { //fetch en display weather API
   apiKey: '6c18edf135f106d608b7494aa3e01292',
   fetchWeather: function (city) {
       fetch('https://api.openweathermap.org/data/2.5/weather?units=metric&q=' 
-      //fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${liveLocation.geoSuccess.lat}&lon=${liveLocation.geoSuccess.lng}&appid=${this.apiKey}` 
       + city 
       + '&appid=' 
       + this.apiKey
@@ -45,10 +46,7 @@ const weather = { //fetch en display weather API
 */
 
 function Home() {
-  const defaultLocation= 'Amsterdam'; //Default location vir as mens site restart
-  const pullLocation= weather.fetchWeather(defaultLocation);
   const [mode, setMode] = useState(false);
-  
   function myAge() { //calculates my age
     const today = new Date();
     const birthDate = new Date(2004,8,6);
@@ -59,7 +57,7 @@ function Home() {
         age--;
     }
       return age;
-    };
+    }
   
   // This useEffect will run only once, when the Home component is mounted
   useEffect(function() {
@@ -75,8 +73,8 @@ function Home() {
         // perform weather search!
         weather.search();
       }
-    }
-  }, []}
+    })
+  }, [])
             
   return (
     <div>
@@ -177,12 +175,12 @@ function Home() {
               }}>
         </Avatar>
        <div>
-        <div class='weather-card'>
+        <div className='weather-card'>
             <Grid container direction='row' alignItems='center'>
-              <div class='search-card'>
-                <div class='search'>
-                  <input type='text' class='search-bar' placeholder='Search City:'/>
-                  <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <div className='search-card'>
+                <div className='search'>
+                  <input type='text' className='search-bar' placeholder='Search City:'/>
+                  <button><svg stroke="currentColor" fill="currentColor" stroke-Width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                     <path 
                       d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
                     </path>
@@ -190,17 +188,17 @@ function Home() {
                 </div>
               </div>
             </Grid>
-            <div class= 'weather'>
-              <h1 class='city'>City: </h1>
-              <h1 class='temp'>Degress of City:</h1>
-              <h4 class='humidity'>Humidity:</h4>
+            <div className= 'weather'>
+              <h1 className='city'>City: </h1>
+              <h1 className='temp'>Degress of City:</h1>
+              <h4 className='humidity'>Humidity:</h4>
               <Grid container direction= 'row' alignItems='center'>
-                <img class='icon'/>
-                <h4 class='description'>Description</h4>
+                <img className='icon'/>
+                <h4 className='description'>Description</h4>
               </Grid>
             </div>
           </div>
       </div>
      </ThemeProvider>
     </div>
-)};
+)}
