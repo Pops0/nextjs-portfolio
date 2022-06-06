@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 import { orange, indigo, teal } from '@mui/material/colors';
 import '@fontsource/lora/400.css';
+import { responsiveFontSizes } from '@mui/material/styles'
 
 // CUSTOM COLORS:
     //Orange
@@ -22,17 +23,17 @@ import '@fontsource/lora/400.css';
 // MAIN THEMES
 export const darkTheme = createTheme({
     palette: {
-        background: {default: '#003F5C'},
+        background: {default: '#0a1929'},
         mode: 'dark',
-        primary: {
-          main: purpleDark},
+        primary: { main: purpleDark, light:'#A2ABCD'},
         secondary: {main: purpleDark},
         info: {main: '#719fB0'},
-        error: {main: buttonColorDark}
+        error: {main: buttonColorDark},
+        warning: {main: '#708090'},
    },
    typography: {
    fontFamily: ['lora', 'cursive'].join(','),
-  },
+   },
 });
 
 export const lightTheme = createTheme({
@@ -42,8 +43,10 @@ export const lightTheme = createTheme({
         primary: {main: orangeDark, light:'#FEF'},
         secondary: {main: orangeLight},
         info: {main: '#CF835B'},
-        error: {main: buttonColorLight}
-  },
+        error: {main: buttonColorLight},
+        warning: {main: '#F4ECC2'},
+        //warning: {main: '#BADF35'},
+      },
   typography: {
     fontFamily: ['lora', 'cursive',].join(','),
   },
