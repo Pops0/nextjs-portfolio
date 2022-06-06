@@ -10,7 +10,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Avatar from '@mui/material/Avatar';
 export default (Home);
 //---------------------------------------------------------------------------------------------------------
-const weather = {
+const weather = { //fetch en display weather API
   apiKey: '6c18edf135f106d608b7494aa3e01292',
   fetchWeather: function (city) {
       fetch('https://api.openweathermap.org/data/2.5/weather?units=metric&q=' 
@@ -54,7 +54,7 @@ const weather = {
 */
 
 function Home() {
-  const defaultLocation= 'Amsterdam';
+  const defaultLocation= 'Amsterdam'; //Default location vir as mens site restart
   const pullLocation= weather.fetchWeather(defaultLocation);
   const [mode, setMode] = useState(false);
   function myAge() { //calculates my age
@@ -70,7 +70,8 @@ function Home() {
     };
   return (
     <div>
-     <ThemeProvider theme={mode ? darkTheme : lightTheme}>
+      {/* Dark mode en light mode ek gebruik MUI se theme provider vir hierdie */}
+     <ThemeProvider theme={mode ? darkTheme : lightTheme}> 
        <CssBaseline/>
         <Paper //main paper
           sx={{
