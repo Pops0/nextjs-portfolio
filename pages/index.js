@@ -38,26 +38,17 @@ const weather = { //fetch en display weather API
   },
 }
 
-//document.querySelector('.search button').addEventListener('click', function() {
-// weather.search();
-//});
-//document.querySelector('.search-bar').addEventListener('keyup', function (event) {
-//if (event.key == "Enter") {
-//  weather.search();
-//   }
-//  }
-//)
-/*^^^^^^ Hierdie is die code wat nie lekker wil werk nie, jy sal sien as jy run dev, dan sal die site werk maar die searchbar doeni, 
-1.) run dev 
-2.) remove hierdie boonste comments
-3.) Probeer die searchbar gebruik hy werk dan 100%
-4.) dan refresh jy die page heeltemal
+/*
+  Die error het gewys 'document is not defined' want die code run voor die React component gelaai is
+  As ons dit skuif om te run binne in die component, dan is alles klaar gelaai so dit werk.
+  Maar jy moet dit in 'n useEffect sit sodat dit net een keer laai want React components run elke keer as daar iets op die screen refresh
 */
 
 function Home() {
   const defaultLocation= 'Amsterdam'; //Default location vir as mens site restart
   const pullLocation= weather.fetchWeather(defaultLocation);
   const [mode, setMode] = useState(false);
+  
   function myAge() { //calculates my age
     const today = new Date();
     const birthDate = new Date(2004,8,6);
@@ -69,6 +60,24 @@ function Home() {
     }
       return age;
     };
+  
+  // This useEffect will run only once, when the Home component is mounted
+  useEffect(function() {
+    // Add event listener for 'click' event when the element is clicked
+    document.querySelector('.search button').addEventListener('click', function() {
+      // perform weather search!
+      weather.search();
+    });
+    
+    // Add event listener to 'keyboard' event
+    document.querySelector('.search-bar').addEventListener('keyup', function (event) {
+      if (event.key == "Enter") {
+        // perform weather search!
+        weather.search();
+      }
+    }
+  }, []}
+            
   return (
     <div>
       {/* Dark mode en light mode ek gebruik MUI se theme provider vir hierdie */}
