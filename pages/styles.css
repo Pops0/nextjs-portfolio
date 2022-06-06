@@ -63,15 +63,14 @@ button:hover {
 
 .weather-card {
     background-color: rgba(102, 101, 101, 0.61);
-    margin-left: 5em;
     position: relative;
-    left: 10%;
-    right: 50%;
-    padding: 2em;
-    transform: translate(10%,-252%);
+    transform: translate(35%, -240%);
+    height: 120%;
+    width: 450px;
+    margin-left: 5em;
+    margin-top: -1px;
     border: 1px solid;
+    padding: 2em;
     border-color: rgb(114, 114, 114);
     border-radius: 5em;
-    height: 320px;
-    width: 450px;
 }
