@@ -21,8 +21,6 @@ import {
 import Brightness3Icon from '@mui/icons-material/Brightness3';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
 
-import isDesktopOrLaptop from '../pages/response.js';
-
 export default (Home);
 
 //---------------------------------------------------------------------------------------------------------
