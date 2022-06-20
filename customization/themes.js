@@ -41,11 +41,10 @@ export const lightTheme = createTheme({
         background: {default: '#FFC5A1'},
         mode: 'light',
         primary: {main: orangeDark, light:'#FEF'},
-        secondary: {main: orangeLight},
+        secondary: {main: '#CF836B'},
         info: {main: '#CF835B'},
         error: {main: buttonColorLight},
         warning: {main: '#F4ECC2'},
-        //warning: {main: '#BADF35'},
       },
   typography: {
     fontFamily: ['lora', 'cursive',].join(','),

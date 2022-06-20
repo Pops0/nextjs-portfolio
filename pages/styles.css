@@ -1,3 +1,7 @@
+h1.municipalityName { 
+    color: red
+}
+
 h1.city {
     margin-bottom: -15px;
     white-space: nowrap;
@@ -30,13 +34,13 @@ input.search-bar{
     height: 3em;
     width: 20em;
     outline: none;
-    background-color: rgb(255, 158, 158);
+    background-color: #ffb6b6;
     padding: 15px;
 
 }
 
 input.search-bar:hover {
-    background: rgb(255, 187, 187);
+    background: #f8cbcb;
     cursor:pointer;
     transition: 0.2s ease-in-out;
 }
@@ -52,25 +56,11 @@ button {
     height: 3em;
     width: 3em;
     outline: none;
-    background-color: rgb(255, 158, 158);
+    background-color: #ffb5b5;
 }
 
 button:hover {
-    background: rgb(255, 187, 187);
+    background: #ffd3d3;
     cursor:pointer;
     transition: 0.2s ease-in-out;
-}
-
-.weather-card {
-    background-color: rgba(102, 101, 101, 0.61);
-    position: relative;
-    transform: translate(35%, -240%);
-    height: 120%;
-    width: 450px;
-    margin-left: 5em;
-    margin-top: -1px;
-    border: 1px solid;
-    padding: 2em;
-    border-color: rgb(114, 114, 114);
-    border-radius: 5em;
 }
