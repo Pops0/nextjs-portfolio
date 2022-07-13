@@ -99,116 +99,89 @@ function Home() {
       <ThemeProvider theme={mode ? darkTheme : lightTheme}> 
         <CssBaseline/>
         <Grid container alignItems='center'>
-          <Paper //main paper
-            sx={{
-                            bgcolor: 'info.main', 
-                            position: 'relative', left: '50%', top: '15.5%',
-                            transform: 'translate(-50%, -12%)',
-                            height: '380px',
-                            width: '100%',
-                            marginTop: -1,
-                            padding:7,
-                            borderRadius:15
-                        }}
-            elevation={15}>
-            <Typography
-                variant= 'h1'
-                align= 'center'
-                sx={{fontSize: {lg:90, md: 75, sm: 50, xs: 35,}}}> 
-                Morne's Portfolio </Typography>
-            <Typography
-                variant= 'h5'
-                align= 'center'
-                sx={{fontSize: {lg:30, md: 25, sm: 16, xs: 11,}}}>
-              Welcome to my Website!</Typography>
-            <div>
-              <Grid container alignItems='center' justifyContent={'center'}>
-                <Grid>
-                  <SvgIcon component={Brightness5Icon} inheritViewBox sx={{position: 'relative', left: '-125%', top: '62%', transform: 'translate(0%, 325%)', }}/>
-                </Grid>
-                <Grid>
-                  <Switch 
-                          checked={mode} 
-                          color= 'primary' 
-                          onChange={() => setMode(!mode)} 
-                          sx={{
-                            position: 'relative', 
-                            left: '50%', 
-                            top: '62%', 
-                            transform: 'translate(-50%, 200%)', 
-                            padding: 0.0, 
-                            border:0.5, 
-                            borderRadius: 8, 
-                            borderColor: 'primary', 
-                            }}>                
-                  </Switch>
-                </Grid>
-                <Grid>
-                  <SvgIcon component={Brightness3Icon} inheritViewBox sx={{position: 'relative', left: '125%', top: '62%', transform: 'translate(0%, 325%)', }}/>
-                </Grid>
-              </Grid>
-            </div>
-          </Paper>
-          <Grid item md={4}> 
-          <Paper //weather Paper
-            sx={{ 
-              bgcolor: 'error.main', 
-              position: 'relative', 
-              transform: 'translate(20%, -15%)',
-              marginTop: 3,
-              marginLeft: 2,
-              padding:4,
-              borderRadius:3,
-              width: '80%',
-            }}>
-          <Grid container direction='row' alignItems='center'>
-              <div className='search-card'>
-                <div className='search'>
-                  <input type='text' className='search-bar' placeholder='Search City:'/>
-                  <button><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-                    <path 
-                      d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
-                    </path>
-                  </svg></button>
+          <Grid item xs={12}>
+            <Paper //main paper
+              sx={{
+                bgcolor: 'info.main', 
+                position: 'relative', left: '50%', top: '15.5%',
+                transform: 'translate(-50%, -12%)',
+                height: '380px',
+                width: '100%',
+                marginTop: -1,
+                padding:7,
+                borderRadius:15
+                }}
+              elevation={15}>
+                <Typography
+                    variant= 'h1'
+                    align= 'center'
+                    sx={{fontSize: {lg:90, md: 75, sm: 50, xs: 35,}}}> 
+                    Morne's Portfolio </Typography>
+                <Typography
+                    variant= 'h5'
+                    align= 'center'
+                    sx={{fontSize: {lg:30, md: 25, sm: 16, xs: 11,}}}>
+                  Welcome to my Website!</Typography>
+                <div>
+                  <Grid container alignItems='center' justifyContent={'center'}>
+                    <Grid>
+                      <SvgIcon component={Brightness5Icon} inheritViewBox sx={{position: 'relative', left: '-125%', top: '62%', transform: 'translate(0%, 325%)', }}/>
+                    </Grid>
+                    <Grid>
+                      <Switch 
+                        checked={mode} 
+                        color= 'primary' 
+                        onChange={() => setMode(!mode)} 
+                        sx={{
+                          position: 'relative', 
+                          left: '50%', 
+                          top: '62%', 
+                          transform: 'translate(-50%, 200%)', 
+                          padding: 0.0, 
+                          border:0.5, 
+                          borderRadius: 8, 
+                          borderColor: 'primary', 
+                          }}>                
+                      </Switch>
+                    </Grid>
+                    <Grid>
+                      <SvgIcon component={Brightness3Icon} inheritViewBox sx={{position: 'relative', left: '125%', top: '62%', transform: 'translate(0%, 325%)', }}/>
+                    </Grid>
+                  </Grid>
                 </div>
-              </div>
+            </Paper>
           </Grid>
-          <Grid item>
-            <div>
-                              <h1 className='city'>City: </h1>
-                              <h1 className='temp'>Degress of City:</h1>
-                              <h4 className='humidity'>Humidity:</h4>
-                              <Grid container direction= 'row' alignItems='center'>
-                                <img className='icon'/>
-                                <h4 className='description'>Description:</h4>
-                              </Grid>
-            </div>
-          </Grid>
-          </Paper>
-          </Grid>
-          <Grid item md={4}>
-            <Avatar
-                          alt= 'blank'  
-                          src= '../nothing.jpg'
-                          sx={{ 
-                            position: 'relative', 
-                            transform: 'translate(-50%, -40%)',
-                            left: '50%', 
-                            top: '10%', 
-                            marginTop: 3,
-                            width: '200px', 
-                            height: '200px', 
-                          }}>
+          <Grid item xs={12} md={6}>
+            <Avatar //avatar
+              alt= 'blank'  
+              src= '../nothing.jpg'
+              sx={{ 
+                position: 'relative', 
+                mt: {xs: 3, md:5},
+                mb: {xs: 5, md:5},
+                ml: {xs:10.75, sm: 32.25, md:25, lg: 35, xl: 75},
+                mr: {xs:10.75, sm: 32.25, md:25, lg: 35, xl: 75},
+                width: {xs: '250px', md: '200px'}, 
+                height:{xs: '250px', md: '200px'}, 
+              }}>
             </Avatar>
           </Grid>
-          <Grid item md={4}> 
+          <Grid item xs={12} md={6}> 
             <Paper //about me paper
               sx={{
                 bgcolor: 'primary.light', 
                 position: 'relative', 
-                transform: 'translate(-10%, -10%)',
-                marginTop: 3.5,
-                marginLeft: 2,
+                height: '100%',
+                width: {
+                  xs: 350,
+                  sm: 600,
+                  md: 350,
+                  lg: 600,
+                  xl: 1000
+                },
+                mt: 3.5,
+                ml: {xs:5, sm:11, md:5, lg: 10, xl: 20},
+                mr: {xs:5, sm:11, md:5, lg: 10, xl: 20},
                 padding:5,
                 borderRadius:3
               }}> 
@@ -238,16 +211,58 @@ function Home() {
             </Paper>
           </Grid>
           <Grid container alignItems='center'>
-            <Grid item md={4}>
+          <Grid item xs={12} md={6}> 
+              <Paper //Weather Paper
+                elevation={4}
+                sx={{ 
+                  bgcolor: 'error.main', 
+                  position: 'relative', 
+                  mt: 5,
+                  mb: 3,
+                  ml: {xs: 5, sm: 10, md: 8, lg: 20},
+                  mr: {xs: 5, sm: 10, md: 8, lg: 20},
+                  padding:4,
+                  borderRadius:3,
+                  width: '80%',
+                }}>
+              <Grid container direction='row' alignItems='center'>
+                  <div className='search-card'>
+                    <div className='search'>
+                      <input type='text' className='search-bar' placeholder='Search City:'/>
+                      <button><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                        <path 
+                          d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+                        </path>
+                      </svg></button>
+                    </div>
+                  </div>
+              </Grid>
+              <Grid item>
+                <div>
+                  <h1 className='city'>City: </h1>
+                  <h1 className='temp'>Degress of City:</h1>
+                  <h4 className='humidity'>Humidity:</h4>
+                  <Grid container direction= 'row' alignItems='center'>
+                    <img className='icon'/>
+                    <h4 className='description'>Description:</h4>
+                  </Grid>
+                </div>
+              </Grid>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
               <Paper //Elon Jet
                 elevation={4} 
-                sx={{
+                sx={{ 
                   bgcolor: 'secondary.main', 
                   position: 'relative', 
-                  transform: 'translate(32.5%, -130%)',
-                  width:'70%',
-                  marginTop: 20,
-                  padding: 1,
+                  mt: 3,
+                  mb: 5,
+                  ml: {xs: 5, sm: 10, md: 10, xl: 20},
+                  mr: {xs: 5, sm: 10, md: 10, xl: 20},
+                  padding:4,
+                  borderRadius:3,
+                  width: '80%',
                 }}>
                 <div>
                   <h1> Elon Musk Private Jet Location:  </h1> {/*{mName}*/}
