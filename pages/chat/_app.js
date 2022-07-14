@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import styles from './styles.css'
+import styles from './App.css'
 
 // eslint-disable-next-line react/prop-types
 export default function MyApp({ Component, pageProps }) {

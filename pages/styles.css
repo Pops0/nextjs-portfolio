@@ -65,12 +65,10 @@ button:hover {
     transition: 0.2s ease-in-out;
 }
 
-span.message1{
-    animation: blinker 1s linear infinite;
+div.websiteWelcome{
+    display:flex;
+    justify-content: center;
+    font-size: x-large;
+    font-family: monospace;
   }
   
-  @keyframes blinker{
-    50%{
-      opacity: 0;
-    }
-  }
