@@ -11,11 +11,17 @@ import {
   SvgIcon,
   Avatar,
   Switch,
+  Drawer,
+  IconButton,
 } from "@mui/material/";
 
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
+
 import axios from "axios";
+import myFirebaseComponent from "./chat/index";
+import { Box } from "@mui/system";
 
 export default Home;
 
@@ -29,7 +35,7 @@ const elonJetApiConfig = {
   method: "GET",
   url: `https://aerodatabox.p.rapidapi.com/flights/%7BsearchBy%7D/N628TS/${date}`,
   headers: {
-    "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
+    // "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
     "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com",
   },
 };
@@ -38,6 +44,7 @@ function Home() {
   const [name, setName] = useState("Fetching location...");
   const [mode, setMode] = useState(false);
   const [flash, setFlash] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   function fetchElonAxios() {
     axios
@@ -54,7 +61,7 @@ function Home() {
       });
   }
 
-  console.log("name", name);
+  console.log("Name: ", name);
   const weather = {
     //fetch en display weather
     apiKey: "6c18edf135f106d608b7494aa3e01292",
@@ -101,36 +108,36 @@ function Home() {
 
   // This useEffect will run only once, when the Home component is mounted
   useEffect(async function () {
-      // Add event listener for 'click' event when the element is clicked
-      document
-        .querySelector(".search button")
-        .addEventListener("click", function () {
+    // Add event listener for 'click' event when the element is clicked
+    document
+      .querySelector(".search button")
+      .addEventListener("click", function () {
+        // perform weather search!
+        weather.search();
+      });
+    // Add event listener to 'keyboard' event
+    document
+      .querySelector(".search-bar")
+      .addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
           // perform weather search!
           weather.search();
-        });
-      // Add event listener to 'keyboard' event
-      document
-        .querySelector(".search-bar")
-        .addEventListener("keyup", function (event) {
-          if (event.key == "Enter") {
-            // perform weather search!
-            weather.search();
-          }
-        });
-        
-    setInterval(function() {
-      setFlash(function(previous) {
-        return !previous
-      })
-    }, 530)
+        }
+      });
+
+    setInterval(function () {
+      setFlash(function (previous) {
+        return !previous;
+      });
+    }, 530);
 
     await typeEffect();
     await fetchElonAxios();
-  },[]);
+  }, []);
 
-  var i = 0;
-  var txt = "Welcome to my Website!";
-  var speed = 50;
+  let i = 0;
+  const txt = "Welcome to my Website!";
+  const speed = 50;
 
   function typeEffect() {
     if (i < txt.length) {
@@ -139,12 +146,42 @@ function Home() {
       setTimeout(typeEffect, speed);
     }
   }
-  
+
   return (
     <div>
       <ThemeProvider theme={mode ? darkTheme : lightTheme}>
         <CssBaseline />
         <Grid container alignItems="center">
+          <>
+            <Paper
+              onClick={() => setIsDrawerOpen(true)}
+              sx={{
+                position: "fixed",
+                transform: "translate(-50%, -50%)",
+                bgcolor: "error.main",
+                width: "80px",
+                height: "200px",
+                borderRadius: "30px",
+                padding: 2,
+              }}
+            >
+              <myFirebaseComponent></myFirebaseComponent>
+              <Typography
+                variant="h5"
+                fontWeight="600"
+                sx={{ transform: "rotate(90deg) translate(100%,-70%)" }}
+                gutterbottom
+                onClick={() => setIsDrawerOpen(true)}
+              >
+                Contact
+              </Typography>
+              <Drawer
+                anchor="left"
+                open={isDrawerOpen}
+                onClose={() => setIsDrawerOpen(false)}
+              ></Drawer>
+            </Paper>
+          </>
           <Grid item xs={12}>
             <Paper //main paper
               sx={{
