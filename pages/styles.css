@@ -64,3 +64,13 @@ button:hover {
     cursor:pointer;
     transition: 0.2s ease-in-out;
 }
+
+span.message1{
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker{
+    50%{
+      opacity: 0;
+    }
+  }

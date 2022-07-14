@@ -1,9 +1,4 @@
-/* eslint-disable no-undef */
-/* eslint-disable react/no-unescaped-entities */
-
 import React, { useState, useEffect } from 'react';
-import { usMediaQuery } from 'react-responsive'
-import { Context as ResponsiveContext } from 'react-responsive'
 
 import { darkTheme, lightTheme} from '../customization/themes';
 
@@ -20,7 +15,6 @@ import {
 
 import Brightness3Icon from '@mui/icons-material/Brightness3';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
-
 export default (Home);
 
 //---------------------------------------------------------------------------------------------------------
@@ -28,18 +22,30 @@ export default (Home);
 const elonJet= {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '727fb8cafbmsha9709d1437adce1p1ea8cajsn33a630f15a6b',
+		// 'X-RapidAPI-Key': '23079cc905msh06895b2835f343fp12649bjsn696fb0859864',
+		// 'X-RapidAPI-Key': '727fb8cafbmsha9709d1437adce1p1ea8cajsn33a630f15a6b',
 		'X-RapidAPI-Host': 'aerodatabox.p.rapidapi.com'
 	}
 };
+
+const today = new Date();
+const date = today.toISOString().substring(0, 10); 
+console.log(date)
+
+if (mName === TypeError){
+  prevDate = date.setDate(today.getDate()-1)
+  console.log(prevDate)
+}
+
 var mName;
-fetch('https://aerodatabox.p.rapidapi.com/flights/reg/N628TS/2022-06-09?withAircraftImage=false&withLocation=true', elonJet)
+fetch(`https://aerodatabox.p.rapidapi.com/flights/reg/N628TS/${date}?`, elonJet)
 	.then((response) => response.json())
-  .then((data) => mName = (data[0].arrival.airport.municipalityName))
-  // .then(() => console.log(mName))
+  .then((data) => mName = (data[0].arrival.airport.name))
+  .then(() => console.log(mName))
 	.catch(err => console.error(err));
 
 function Home() {
+
   const weather = { //fetch en display weather 
     apiKey: '6c18edf135f106d608b7494aa3e01292',
     fetchWeather: function (city) {
@@ -66,6 +72,7 @@ function Home() {
       this.fetchWeather(document.querySelector('.search-bar').value)
     },
   }
+
   const [mode, setMode] = useState(false);
   function myAge() { //calculates my age
     const today = new Date();
@@ -76,11 +83,13 @@ function Home() {
     {
         age--;
     }
+      console.log(age)
       return age;
     }
+
   // This useEffect will run only once, when the Home component is mounted
   useEffect(function() {
-    // Add event listener for 'click' event when the element is clicked
+   { // Add event listener for 'click' event when the element is clicked
     document.querySelector('.search button').addEventListener('click', function() {
       // perform weather search!
       weather.search();
@@ -91,9 +100,21 @@ function Home() {
         // perform weather search!
         weather.search();
       }
-    })
+    })}
+  },[])
 
-  }, [])
+  var i = 0;
+  var txt = 'Welcome to my Website!';
+  var speed = 50;
+
+  function typeEffect() {
+    if (i < txt.length) {
+      document.getElementById("typingEffectP").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeEffect, speed);
+    }
+  }
+
   return (
     <div>
       <ThemeProvider theme={mode ? darkTheme : lightTheme}> 
@@ -116,12 +137,13 @@ function Home() {
                     variant= 'h1'
                     align= 'center'
                     sx={{fontSize: {lg:90, md: 75, sm: 50, xs: 35,}}}> 
-                    Morne's Portfolio </Typography>
+                    Morne's Website </Typography>
                 <Typography
                     variant= 'h5'
                     align= 'center'
-                    sx={{fontSize: {lg:30, md: 25, sm: 16, xs: 11,}}}>
-                  Welcome to my Website!</Typography>
+                    sx={{fontSize: {lg:30, md: 25, sm: 16, xs: 11,}}}
+                    >Welcome to my website!</Typography>
+                    {/* <p id="typingEffectP">Welcome to my Website!</p> */}
                 <div>
                   <Grid container alignItems='center' justifyContent={'center'}>
                     <Grid>
@@ -145,7 +167,7 @@ function Home() {
                       </Switch>
                     </Grid>
                     <Grid>
-                      <SvgIcon component={Brightness3Icon} inheritViewBox sx={{position: 'relative', left: '125%', top: '62%', transform: 'translate(0%, 325%)', }}/>
+                      <SvgIcon component={Brightness3Icon} inheritViewBox sx={{position: 'relative', left: '125%', top: '62%', transform: 'translate(0%, 325%)'}}/>
                     </Grid>
                   </Grid>
                 </div>
@@ -159,8 +181,8 @@ function Home() {
                 position: 'relative', 
                 mt: {xs: 3, md:5},
                 mb: {xs: 5, md:5},
-                ml: {xs:10.75, sm: 32.25, md:25, lg: 35, xl: 75},
-                mr: {xs:10.75, sm: 32.25, md:25, lg: 35, xl: 75},
+                ml: {xs:10.75, sm: 32.25, md:25, lg: 45, xl: 50},
+                mr: {xs:10.75, sm: 32.25, md:25, lg: 45, xl: 50},
                 width: {xs: '250px', md: '200px'}, 
                 height:{xs: '250px', md: '200px'}, 
               }}>
@@ -175,9 +197,8 @@ function Home() {
                 width: {
                   xs: 350,
                   sm: 600,
-                  md: 350,
-                  lg: 600,
-                  xl: 1000
+                  md: 450,
+                  lg: 550
                 },
                 mt: 3.5,
                 ml: {xs:5, sm:11, md:5, lg: 10, xl: 20},
@@ -219,11 +240,11 @@ function Home() {
                   position: 'relative', 
                   mt: 5,
                   mb: 3,
-                  ml: {xs: 5, sm: 10, md: 8, lg: 20},
-                  mr: {xs: 5, sm: 10, md: 8, lg: 20},
+                  ml: {xs: 5, sm: 10, md: 8, lg: 30},
+                  mr: {xs: 5, sm: 10, md: 8, lg: 30},
                   padding:4,
                   borderRadius:3,
-                  width: '80%',
+                  width: {sm: '80%', lg: 500},
                 }}>
               <Grid container direction='row' alignItems='center'>
                   <div className='search-card'>
@@ -258,15 +279,20 @@ function Home() {
                   position: 'relative', 
                   mt: 3,
                   mb: 5,
-                  ml: {xs: 5, sm: 10, md: 10, xl: 20},
-                  mr: {xs: 5, sm: 10, md: 10, xl: 20},
+                  ml: {xs: 11, sm: 17.5, md: 5, lg: 15 ,xl: 20},
+                  mr: {xs: 11, sm: 17.5, md: 5, lg: 15 ,xl: 20},
                   padding:4,
                   borderRadius:3,
-                  width: '80%',
+                  width: {
+                    xs: 250,
+                    sm: 500,
+                    md: 450,
+                    xl: 500,
+                  },
                 }}>
                 <div>
-                  <h1> Elon Musk Private Jet Location:  </h1> {/*{mName}*/}
-                  <a href="https://globe.adsbexchange.com/?icao=a835af">Proof</a>
+                  <h1> Elon Musk Private Jet Location: {mName}</h1>  {/*{mName}*/}
+                  <a href="https://globe.adsbexchange.com/?icao=a835af" target="_blank">Proof</a>
                 </div>
               </Paper>
             </Grid>

@@ -14,8 +14,8 @@ import { responsiveFontSizes } from '@mui/material/styles'
     const buttonColorDark= '#1d3557';
     const buttonColorLight= orange[100];
     //Gradients
-    const gradDark= 'linear-gradient(135deg, #A0C1B8 30%, #719FB0 110%)';
-    const gradLight= 'linear-gradient(135deg, #FF8E53 30%, #CF835B 100%)';
+    // const gradDark= 'linear-gradient(135deg, #A0C1B8 30%, #719FB0 110%)';
+    // const gradLight= 'linear-gradient(135deg, #FF8E53 30%, #CF835B 100%)';
     //Paper
     const darkP = '#719fB0'
     const lightP = '#CF835B' 
@@ -30,6 +30,9 @@ export const darkTheme = createTheme({
         info: {main: '#719fB0'},
         error: {main: buttonColorDark},
         warning: {main: '#708090'},
+   },
+   paper: {
+
    },
    typography: {
    fontFamily: ['lora', 'cursive'].join(','),
