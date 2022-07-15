@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-// import "./App.css";
-
+import Home from "../index.js";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
@@ -10,18 +9,22 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
-    apiKey: "AIzaSyBvBDRhTbx1tuJ46YTrBGO3p08Lgg0xQ_4",
-    authDomain: "fir-portfolio-f958a.firebaseapp.com",
-    projectId: "fir-portfolio-f958a",
-    storageBucket: "fir-portfolio-f958a.appspot.com",
-    messagingSenderId: "456855860948",
-    appId: "1:456855860948:web:705a9866a38cd95ad66d41",
-    measurementId: "G-48VE6V1CRF"
+  apiKey: "AIzaSyBvBDRhTbx1tuJ46YTrBGO3p08Lgg0xQ_4",
+  authDomain: "fir-portfolio-f958a.firebaseapp.com",
+  projectId: "fir-portfolio-f958a",
+  storageBucket: "fir-portfolio-f958a.appspot.com",
+  messagingSenderId: "456855860948",
+  appId: "1:456855860948:web:705a9866a38cd95ad66d41",
+  measurementId: "G-48VE6V1CRF",
 });
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 // const analytics = firebase.analytics();
+
+if (typeof window !== "undefined") {
+  console.log("windowError occured");
+}
 
 function App() {
   const [user] = useAuthState(auth);
@@ -29,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>⚛️🔥💬</h1>
+        <h1 title="Firebase React Chat">🔥⚛️💬</h1>
         <SignOut />
       </header>
 
@@ -49,9 +52,9 @@ function SignIn() {
       <button className="sign-in" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
-      <p>
+      {/* <p className="FireBaseParagraph">
         Do not violate the community guidelines or you will be banned for life!
-      </p>
+      </p> */}
     </>
   );
 }
@@ -102,12 +105,12 @@ function ChatRoom() {
 
       <form onSubmit={sendMessage}>
         <input
+          className="MessageSubmit"
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
           placeholder="say something nice"
         />
-
-        <button type="submit" disabled={!formValue}>
+        <button className="sendbutton" type="submit" disabled={!formValue}>
           🕊️
         </button>
       </form>
@@ -124,11 +127,12 @@ function ChatMessage(props) {
     <>
       <div className={`message ${messageClass}`}>
         <img
+          className="FireBaseImage"
           src={
             photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
           }
         />
-        <p>{text}</p>
+        <p className="FireBaseParagraph">{text}</p>
       </div>
     </>
   );

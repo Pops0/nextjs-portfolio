@@ -12,16 +12,14 @@ import {
   Avatar,
   Switch,
   Drawer,
-  IconButton,
 } from "@mui/material/";
 
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import CloseIcon from "@mui/icons-material/Close";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 
 import axios from "axios";
-import myFirebaseComponent from "./chat/index";
-import { Box } from "@mui/system";
+import App from "./chat/index.js";
 
 export default Home;
 
@@ -40,11 +38,23 @@ const elonJetApiConfig = {
   },
 };
 
+if (typeof window !== "undefined") {
+  console.log("windowError occured");
+}
+
 function Home() {
   const [name, setName] = useState("Fetching location...");
   const [mode, setMode] = useState(false);
   const [flash, setFlash] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  function closeDrawerButton() {
+    return (
+      <button className="closeButton" onClick={() => setIsDrawerOpen(false)}>
+        <SvgIcon component="Close"></SvgIcon>
+      </button>
+    );
+  }
 
   function fetchElonAxios() {
     axios
@@ -107,7 +117,7 @@ function Home() {
   }
 
   // This useEffect will run only once, when the Home component is mounted
-  useEffect(async function () {
+  useEffect(function () {
     // Add event listener for 'click' event when the element is clicked
     document
       .querySelector(".search button")
@@ -130,9 +140,9 @@ function Home() {
         return !previous;
       });
     }, 530);
-
-    await typeEffect();
-    await fetchElonAxios();
+    typeEffect();
+    closeDrawerButton();
+    fetchElonAxios();
   }, []);
 
   let i = 0;
@@ -157,7 +167,13 @@ function Home() {
               onClick={() => setIsDrawerOpen(true)}
               sx={{
                 position: "fixed",
-                transform: "translate(-50%, -50%)",
+                transform: {
+                  xs: "translate(-50%, -350%)",
+                  sm: "translate(-50%, -230%)",
+                  md: "translate(-50%, -100%)",
+                  lg: "translate(-50%, -250%)",
+                  xl: "translate(-50%, -100%)",
+                },
                 bgcolor: "error.main",
                 width: "80px",
                 height: "200px",
@@ -165,7 +181,6 @@ function Home() {
                 padding: 2,
               }}
             >
-              <myFirebaseComponent></myFirebaseComponent>
               <Typography
                 variant="h5"
                 fontWeight="600"
@@ -179,7 +194,9 @@ function Home() {
                 anchor="left"
                 open={isDrawerOpen}
                 onClose={() => setIsDrawerOpen(false)}
-              ></Drawer>
+              >
+                <App />
+              </Drawer>
             </Paper>
           </>
           <Grid item xs={12}>
@@ -203,7 +220,7 @@ function Home() {
                 align="center"
                 sx={{ fontSize: { lg: 90, md: 75, sm: 50, xs: 35 } }}
               >
-                Morne's Website{" "}
+                Morne's Website
               </Typography>
               <div className="websiteWelcome">
                 <span id="typingEffectId"></span>
@@ -401,6 +418,7 @@ function Home() {
             </Grid>
           </Grid>
         </Grid>
+        <Paper sx={{ position: "fixed", bgcolor: "#0498" }}></Paper>
       </ThemeProvider>
     </div>
   );

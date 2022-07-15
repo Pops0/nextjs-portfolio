@@ -10,6 +10,7 @@
     "@chakra-ui/react": "^2.1.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@firebase/analytics": "^0.8.0",
     "@fontsource/indie-flower": "^4.5.8",
     "@fontsource/koulen": "^4.5.8",
     "@fontsource/lora": "^4.5.9",
