@@ -2338,6 +2338,11 @@
     "@babel/runtime" "^7.10.4"
     react-is "^16.6.3"
 
+"@fontsource/cinzel@^4.5.7":
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/cinzel/-/cinzel-4.5.7.tgz#16b61af22d42799fae5344c20a163bbcd49bd53b"
+  integrity sha512-huOa1J1rnamLPTEYG9HTCsnwH42Klp2vG+P6Cbt3RXqRzxUVpNMVMIqcsb7RzM0NZQwGVtaxzpLqE7e+kq+6sQ==
+
 "@fontsource/indie-flower@^4.5.8":
   version "4.5.8"
   resolved "https://registry.npmjs.org/@fontsource/indie-flower/-/indie-flower-4.5.8.tgz"
@@ -2362,6 +2367,11 @@
   version "4.5.9"
   resolved "https://registry.npmjs.org/@fontsource/smooch/-/smooch-4.5.9.tgz"
   integrity sha512-+z/3+WuUIOhrRLK7Q3Ft4vHeiHI6n6QdbYeixOu5MBm2VZZYxprrgYc4wsVi6nDUW2mi4zjyz2gHOBZL/nhZRA==
+
+"@fontsource/yanone-kaffeesatz@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/yanone-kaffeesatz/-/yanone-kaffeesatz-4.5.10.tgz#0c41c7f5bd0ec2a628ac26f239476b50ef1b7de1"
+  integrity sha512-h5cF7TXgNt2CTJg7XcFMo8DXxtwus+JmMYpoQ8ftnt7jiVX0z/aIfN/yw8mol068Gn9BbBUGQEhFcECbGk1+7g==
 
 "@grpc/grpc-js@^1.3.2":
   version "1.6.7"

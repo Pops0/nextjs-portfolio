@@ -1,2 +1,3 @@
-lang messages
+lang messages sent en terwyl tik
 close button
+contact fixed position

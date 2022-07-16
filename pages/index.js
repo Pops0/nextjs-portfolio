@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from "react";
 
 import { darkTheme, lightTheme } from "../customization/themes";
@@ -14,7 +15,6 @@ import {
   Drawer,
 } from "@mui/material/";
 
-import CloseIcon from "@mui/icons-material/Close";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 
@@ -48,14 +48,6 @@ function Home() {
   const [flash, setFlash] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  function closeDrawerButton() {
-    return (
-      <button className="closeButton" onClick={() => setIsDrawerOpen(false)}>
-        <SvgIcon component="Close"></SvgIcon>
-      </button>
-    );
-  }
-
   function fetchElonAxios() {
     axios
       .request(elonJetApiConfig)
@@ -71,7 +63,10 @@ function Home() {
       });
   }
 
-  console.log("Name: ", name);
+  function setDrawerFalse() {
+    return setIsDrawerOpen(false);
+  }
+
   const weather = {
     //fetch en display weather
     apiKey: "6c18edf135f106d608b7494aa3e01292",
@@ -112,20 +107,16 @@ function Home() {
     if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
-    console.log(age);
     return age;
   }
 
-  // This useEffect will run only once, when the Home component is mounted
   useEffect(function () {
-    // Add event listener for 'click' event when the element is clicked
     document
       .querySelector(".search button")
       .addEventListener("click", function () {
         // perform weather search!
         weather.search();
       });
-    // Add event listener to 'keyboard' event
     document
       .querySelector(".search-bar")
       .addEventListener("keyup", function (event) {
@@ -135,13 +126,16 @@ function Home() {
         }
       });
 
+    console.log(myAge());
+    console.log("Name: ", name);
+
     setInterval(function () {
       setFlash(function (previous) {
         return !previous;
       });
     }, 530);
+    setDrawerFalse();
     typeEffect();
-    closeDrawerButton();
     fetchElonAxios();
   }, []);
 
@@ -163,7 +157,7 @@ function Home() {
         <CssBaseline />
         <Grid container alignItems="center">
           <>
-            <Paper
+            <Paper // Drawer
               onClick={() => setIsDrawerOpen(true)}
               sx={{
                 position: "fixed",
@@ -418,7 +412,6 @@ function Home() {
             </Grid>
           </Grid>
         </Grid>
-        <Paper sx={{ position: "fixed", bgcolor: "#0498" }}></Paper>
       </ThemeProvider>
     </div>
   );

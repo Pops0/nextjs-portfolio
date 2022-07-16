@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import Home from "../index.js";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
@@ -7,6 +6,8 @@ import "firebase/compat/analytics";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+
+import Home from "../index.js";
 
 firebase.initializeApp({
   apiKey: "AIzaSyBvBDRhTbx1tuJ46YTrBGO3p08Lgg0xQ_4",
@@ -33,9 +34,14 @@ function App() {
     <div className="App">
       <header>
         <h1 title="Firebase React Chat">🔥⚛️💬</h1>
+        <button
+          className="closeButton"
+          onClick={() => Home.setIsDrawerOpen(false)}
+        >
+          X
+        </button>
         <SignOut />
       </header>
-
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
@@ -61,11 +67,13 @@ function SignIn() {
 
 function SignOut() {
   return (
-    auth.currentUser && (
+    auth.currentUser &&
+    ((<button className="closeButton">X</button>),
+    (
       <button className="sign-out" onClick={() => auth.signOut()}>
         Sign Out
       </button>
-    )
+    ))
   );
 }
 
