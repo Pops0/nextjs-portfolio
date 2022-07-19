@@ -13,7 +13,6 @@ import {
   Avatar,
   Switch,
   Drawer,
-  Fade,
 } from "@mui/material/";
 
 import Brightness3Icon from "@mui/icons-material/Brightness3";
