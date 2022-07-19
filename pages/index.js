@@ -13,6 +13,7 @@ import {
   Avatar,
   Switch,
   Drawer,
+  Fade,
 } from "@mui/material/";
 
 import Brightness3Icon from "@mui/icons-material/Brightness3";
@@ -33,7 +34,7 @@ const elonJetApiConfig = {
   method: "GET",
   url: `https://aerodatabox.p.rapidapi.com/flights/%7BsearchBy%7D/N628TS/${date}`,
   headers: {
-    // "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
+    "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
     "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com",
   },
 };
@@ -47,6 +48,7 @@ function Home() {
   const [mode, setMode] = useState(false);
   const [flash, setFlash] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [tSwitch, setTSwitch] = useState(false);
 
   function fetchElonAxios() {
     axios
@@ -110,6 +112,27 @@ function Home() {
     return age;
   }
 
+  let i = 0;
+  const txt = "Welcome to my Website!";
+  const speed = 50;
+
+  function typeEffect() {
+    if (i < txt.length) {
+      document.getElementById("typingEffectId").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeEffect, speed);
+    }
+  }
+
+  function transitionFix() {
+    if (mode === false) {
+      setTSwitch(true);
+    } else if (mode === true){
+      setTSwitch(false);
+      setTSwitch(true);
+    }
+  }
+
   useEffect(function () {
     document
       .querySelector(".search button")
@@ -130,69 +153,59 @@ function Home() {
     console.log("Name: ", name);
 
     setInterval(function () {
-      setFlash(function (previous) {
-        return !previous;
+      setFlash((prev) => {
+        return !prev;
       });
     }, 530);
+
     setDrawerFalse();
+    transitionFix();
     typeEffect();
     fetchElonAxios();
+
+    console.log( "Trans Switch: ", tSwitch);
+
   }, []);
-
-  let i = 0;
-  const txt = "Welcome to my Website!";
-  const speed = 50;
-
-  function typeEffect() {
-    if (i < txt.length) {
-      document.getElementById("typingEffectId").innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeEffect, speed);
-    }
-  }
 
   return (
     <div>
       <ThemeProvider theme={mode ? darkTheme : lightTheme}>
         <CssBaseline />
         <Grid container alignItems="center">
-          <>
-            <Paper // Drawer
+          <Paper // Drawer
+            onClick={() => setIsDrawerOpen(true)}
+            sx={{
+              position: "fixed",
+              transform: {
+                xs: "translate(-50%, -350%)",
+                sm: "translate(-50%, -230%)",
+                md: "translate(-50%, -100%)",
+                lg: "translate(-50%, -250%)",
+                xl: "translate(-50%, -100%)",
+              },
+              bgcolor: "error.main",
+              width: "80px",
+              height: "200px",
+              borderRadius: "30px",
+              padding: 2,
+            }}
+          >
+            <Typography
+              variant="h5"
+              fontWeight="600"
+              sx={{ transform: "rotate(90deg) translate(100%,-70%)" }}
               onClick={() => setIsDrawerOpen(true)}
-              sx={{
-                position: "fixed",
-                transform: {
-                  xs: "translate(-50%, -350%)",
-                  sm: "translate(-50%, -230%)",
-                  md: "translate(-50%, -100%)",
-                  lg: "translate(-50%, -250%)",
-                  xl: "translate(-50%, -100%)",
-                },
-                bgcolor: "error.main",
-                width: "80px",
-                height: "200px",
-                borderRadius: "30px",
-                padding: 2,
-              }}
             >
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                sx={{ transform: "rotate(90deg) translate(100%,-70%)" }}
-                gutterbottom
-                onClick={() => setIsDrawerOpen(true)}
-              >
-                Contact
-              </Typography>
-              <Drawer
-                anchor="left"
-                open={isDrawerOpen}
-                onClose={() => setIsDrawerOpen(false)}
-              >
-                <App />
-              </Drawer>
-            </Paper>
-          </>
+              Contact
+            </Typography>
+            <Drawer
+              anchor="left"
+              open={isDrawerOpen}
+              onClose={() => setIsDrawerOpen(false)}
+            >
+              <App />
+            </Drawer>
+          </Paper>
           <Grid item xs={12}>
             <Paper //main paper
               sx={{
@@ -268,19 +281,30 @@ function Home() {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Avatar //avatar
-              alt="blank"
-              src="../nothing.jpg"
-              sx={{
-                position: "relative",
-                mt: { xs: 3, md: 5 },
-                mb: { xs: 5, md: 5 },
-                ml: { xs: 10.75, sm: 32.25, md: 25, lg: 45, xl: 50 },
-                mr: { xs: 10.75, sm: 32.25, md: 25, lg: 45, xl: 50 },
-                width: { xs: "250px", md: "200px" },
-                height: { xs: "250px", md: "200px" },
+            {/* <Fade
+              in={tSwitch}
+              // addEndListener={(node, done) => {
+              //   node.addEventListener("transitionend", done, false);
+              // }}
+              timeout={{
+                enter: lightTheme.transitions.duration.complex,
+                exit: lightTheme.transitions.duration.leavingScreen,
               }}
-            ></Avatar>
+            > */}
+              <Avatar //avatar
+                alt="blank"
+                src="../avatar.jpg"
+                sx={{
+                  position: "relative",
+                  mt: { xs: 3, md: 5 },
+                  mb: { xs: 5, md: 5 },
+                  ml: { xs: 10.75, sm: 37, md: 19, lg: 45, xl: 50 },
+                  mr: { xs: 10.75, sm: 37, md: 19, lg: 45, xl: 50 },
+                  width: { xs: "250px", md: "220px" },
+                  height: { xs: "250px", md: "220px" },
+                }}
+              ></Avatar>
+            {/* </Fade> */}
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper //about me paper
@@ -295,8 +319,8 @@ function Home() {
                   lg: 550,
                 },
                 mt: 3.5,
-                ml: { xs: 5, sm: 11, md: 5, lg: 10, xl: 20 },
-                mr: { xs: 5, sm: 11, md: 5, lg: 10, xl: 20 },
+                ml: { xs: 5, sm: 15, md: 5, lg: 10, xl: 20 },
+                mr: { xs: 5, sm: 15, md: 5, lg: 10, xl: 20 },
                 padding: 5,
                 borderRadius: 3,
               }}
@@ -308,9 +332,9 @@ function Home() {
                 mt={-3}
                 mb={-1.5}
               >
-                About Me
+                About Me:
               </Typography>
-              <h3>
+              <h3 className="aboutMe">
                 Hi! My name is Morné Cornelius, I am {myAge()} and have had a
                 computer since I was 3 years old and had a blast since then, I
                 started with gaming and slowly began to get fond of how programs
@@ -399,13 +423,14 @@ function Home() {
                 }}
               >
                 <div>
-                  <h1> Elon Musk Private Jet Location: {name}</h1>
+                  <h2 className="elonHeader"> Elon Musk Private Jet Location: {name}</h2>
                   <a
+                    className="proofAnchor"
                     href="https://globe.adsbexchange.com/?icao=a835af"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Proof
+                    Open Map
                   </a>
                 </div>
               </Paper>
