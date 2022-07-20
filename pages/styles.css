@@ -71,6 +71,11 @@ div.pagination_section:hover {
   border-radius: 10px;
 }
 
+div.avatar_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 a.proofAnchor {
   color: rgb(0 0 0);
   font-size: x-large;

@@ -16,8 +16,8 @@ import {
 
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 import axios from "axios";
 
@@ -37,10 +37,6 @@ const elonJetApiConfig = {
     "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com",
   },
 };
-
-if (typeof window === "undefined") {
-  console.log("WindowError");
-}
 
 function Home() {
   const [name, setName] = useState("Fetching location...");
@@ -273,31 +269,23 @@ function Home() {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6} direction="column">
-            <>
-              {/* <Fade
-              in={tSwitch}
-              // addEndListener={(node, done) => {
-              //   node.addEventListener("transitionend", done, false);
-              // }}
-              timeout={{
-                enter: lightTheme.transitions.duration.complex,
-                exit: lightTheme.transitions.duration.leavingScreen,
-              }}
-            > */}
-            </>
-            <Avatar //avatar
-              alt="blank"
-              src="../nothing.jpg"
-              sx={{
-                position: "relative",
-                mt: { xs: 1, md: 5 },
-                mb: { xs: 1, md: 5 },
-                ml: { md: 14, large: 30, xl: 55 },
-                mr: { md: 14, large: 30, xl: 55 },
-                width: { xs: "175px", md: "220px" },
-                height: { xs: "175px", md: "220px" },
-              }}
-            ></Avatar>
+            <div className="avatar_div">
+              <Avatar //avatar
+                alt="blank"
+                src="../nothing.jpg"
+                sx={{
+                  position: "relative",
+                  mt: { xs: 1, md: 5 },
+                  mb: { xs: 1, md: 5 },
+                  // ml: { md: 20, large: 30 },
+                  // mr: { md: 20, large: 30 },
+                  width: { xs: "175px", md: "220px" },
+                  height: { xs: "175px", md: "220px" },
+                  border: "0px solid",
+                  borderRadius: "200px",
+                }}
+              ></Avatar>
+            </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper //about me paper
@@ -439,10 +427,10 @@ function Home() {
         <Grid item xs={12}>
           <div className="pagination_section">
             <a href="#" title="Main" className="paginationAnchor">
-            <SvgIcon component={ChevronLeftIcon}></SvgIcon>
+              <SvgIcon component={ChevronLeftIcon}></SvgIcon>
             </a>
             <a href="chat" title="Contact" className="paginationAnchor">
-            <SvgIcon component={ChevronRightIcon}></SvgIcon>
+              <SvgIcon component={ChevronRightIcon}></SvgIcon>
             </a>
           </div>
         </Grid>
