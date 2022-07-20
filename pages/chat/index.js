@@ -28,7 +28,7 @@ if (typeof window !== "undefined") {
 }
 
 function GoToMainPage() {
-  return (window.location.href =
+  return (location.href =
     "https://resplendent-torte-204270.netlify.app/");
 }
 
