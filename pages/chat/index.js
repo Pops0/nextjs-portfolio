@@ -7,6 +7,7 @@ import "firebase/compat/analytics";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { Pagination } from "@mui/material";
 
 firebase.initializeApp({
   apiKey: "AIzaSyBvBDRhTbx1tuJ46YTrBGO3p08Lgg0xQ_4",
@@ -26,6 +27,11 @@ if (typeof window !== "undefined") {
   console.log("windowError occured");
 }
 
+function GoToMainPage() {
+  return (window.location.href =
+    "https://resplendent-torte-204270.netlify.app/");
+}
+
 function App() {
   const [user] = useAuthState(auth);
 
@@ -36,6 +42,12 @@ function App() {
         <SignOut />
       </header>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
+      <Pagination
+        count={2}
+        color="primary"
+        onChange={GoToMainPage()}
+      />
+      ;
     </div>
   );
 }
@@ -60,12 +72,12 @@ function SignIn() {
 
 function SignOut() {
   return (
-    auth.currentUser &&
-    (
+    auth.currentUser && (
       <button className="sign-out" onClick={() => auth.signOut()}>
         Sign Out
       </button>
-    ));
+    )
+  );
 }
 
 function ChatRoom() {

@@ -19,7 +19,6 @@ import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 
 import axios from "axios";
-// import App from "./chat/index.js";
 
 export default Home;
 
@@ -38,15 +37,18 @@ const elonJetApiConfig = {
   },
 };
 
-if (typeof window !== "undefined") {
-  console.log("windowError occured");
+if (typeof window === "undefined") {
+  console.log("WindowError");
 }
 
 function Home() {
   const [name, setName] = useState("Fetching location...");
   const [mode, setMode] = useState(false);
   const [flash, setFlash] = useState(false);
-  // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  let i = 0;
+  const txt = "Welcome to my Website!";
+  const speed = 50;
 
   function fetchElonAxios() {
     axios
@@ -106,16 +108,21 @@ function Home() {
     return age;
   }
 
-  let i = 0;
-  const txt = "Welcome to my Website!";
-  const speed = 50;
-
   function typeEffect() {
     if (i < txt.length) {
       document.getElementById("typingEffectId").innerHTML += txt.charAt(i);
       i++;
       setTimeout(typeEffect, speed);
     }
+  }
+
+  function GoToChatPage() {
+    return (location.href =
+      "https://resplendent-torte-204270.netlify.app/chat");
+  }
+
+  function GoToChatPage() {
+    return (<a href = "yes"></a>)
   }
 
   useEffect(function () {
@@ -134,9 +141,6 @@ function Home() {
         }
       });
 
-    console.log(myAge());
-    console.log("Name: ", name);
-
     setInterval(function () {
       setFlash((prev) => {
         return !prev;
@@ -146,6 +150,7 @@ function Home() {
     typeEffect();
     fetchElonAxios();
   }, []);
+
   // yes
   return (
     <div>
@@ -230,7 +235,7 @@ function Home() {
                   justifyContent="center"
                   column={14}
                 >
-                  <Grid item xs={1}>
+                  <Grid>
                     <SvgIcon
                       component={Brightness5Icon}
                       inheritViewBox
@@ -242,7 +247,7 @@ function Home() {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid>
                     <Switch
                       checked={mode}
                       color="primary"
@@ -259,7 +264,7 @@ function Home() {
                       }}
                     ></Switch>
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid>
                     <SvgIcon
                       component={Brightness3Icon}
                       inheritViewBox
@@ -293,12 +298,12 @@ function Home() {
               src="../nothing.jpg"
               sx={{
                 position: "relative",
-                mt: { xs: 3, md: 5 },
-                mb: { xs: 5, md: 5 },
-                ml: { md: 12, large: 30, xl: 55, },
-                mr: { md: 12, large: 30, xl: 55, },
-                width: { xs: "250px", md: "220px" },
-                height: { xs: "250px", md: "220px" },
+                mt: { xs: 1, md: 5 },
+                mb: { xs: 1, md: 5 },
+                ml: { md: 14, large: 30, xl: 55 },
+                mr: { md: 14, large: 30, xl: 55 },
+                width: { xs: "175px", md: "220px" },
+                height: { xs: "175px", md: "220px" },
               }}
             ></Avatar>
           </Grid>
@@ -317,18 +322,35 @@ function Home() {
               <Typography
                 variant="h3"
                 align="center"
-                sx={{ textDecoration: "underline", fontSize:{ xs: "20px", sm: "30px", md: "40px", large: "50px" }}}
+                sx={{
+                  textDecoration: "underline",
+                  fontSize: {
+                    xs: "20px",
+                    sm: "30px",
+                    md: "40px",
+                    large: "50px",
+                  },
+                }}
                 mt={-3}
                 mb={1}
               >
                 About Me:
               </Typography>
-              <Typography sx={{ fontSize:{ xs: "11px", sm: "15px", md: "20px", large: "25px" } }}>
-                Hi! My name is Morné Cornelius, I am 17 and have had a computer
-                since I was 3 years old and had enjoyed computers since then, I
-                started with gaming and slowly began to get fond of how programs
-                work, my father taught me the basics of how to operate a
-                computer, and I taught myself the rest, I have been stuck with
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: "11px",
+                    sm: "15px",
+                    md: "20px",
+                    large: "25px",
+                  },
+                }}
+              >
+                Hi! My name is Morné Cornelius, I am {myAge()} and have had a
+                computer since I was 3 years old and had enjoyed computers since
+                then, I started with gaming and slowly began to get fond of how
+                programs work, my father taught me the basics of how to operate
+                a computer, and I taught myself the rest, I have been stuck with
                 several problems over the few years but always ended up fixing
                 them. If I encounter a problem, I never leave it be. I taught
                 myself coding when I was 12 and ended up wanting to master
@@ -423,7 +445,12 @@ function Home() {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Pagination count={2} color="primary"></Pagination>
+          <Pagination
+            count={2}
+            color="primary"
+            size='large'
+            onChange={ GoToChatPage() } 
+          />
         </Grid>
       </ThemeProvider>
     </div>

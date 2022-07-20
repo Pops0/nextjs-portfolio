@@ -96,7 +96,9 @@ export const lightTheme = createTheme({
           backgroundImage: `linear-gradient(305deg, #ef9c6c 30%, #ff9f9f 70%)`,
           backgroundAttachment: "fixed",
         },
-        
+        // root: {
+        //   "input.search-bar"
+        // }
       },
     },
   },

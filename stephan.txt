@@ -1,1 +1,3 @@
 lang messages sent en terwyl tik
+welcome website tick
+Seker maak oor pagination
