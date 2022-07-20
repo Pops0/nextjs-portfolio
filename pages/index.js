@@ -121,10 +121,6 @@ function Home() {
       "https://resplendent-torte-204270.netlify.app/chat");
   }
 
-  function GoToChatPage() {
-    return (<a href = "yes"></a>)
-  }
-
   useEffect(function () {
     document
       .querySelector(".search button")
