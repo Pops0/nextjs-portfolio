@@ -12,11 +12,12 @@ import {
   SvgIcon,
   Avatar,
   Switch,
-  Pagination,
 } from "@mui/material/";
 
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 import axios from "axios";
 
@@ -114,11 +115,6 @@ function Home() {
       i++;
       setTimeout(typeEffect, speed);
     }
-  }
-
-  function GoToChatPage() {
-    return (location.href =
-      "https://resplendent-torte-204270.netlify.app/chat");
   }
 
   useEffect(function () {
@@ -441,12 +437,14 @@ function Home() {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Pagination
-            count={2}
-            color="primary"
-            size='large'
-            onChange={ GoToChatPage() } 
-          />
+          <div className="pagination_section">
+            <a href="#" title="Main" className="paginationAnchor">
+            <SvgIcon component={ChevronLeftIcon}></SvgIcon>
+            </a>
+            <a href="chat" title="Contact" className="paginationAnchor">
+            <SvgIcon component={ChevronRightIcon}></SvgIcon>
+            </a>
+          </div>
         </Grid>
       </ThemeProvider>
     </div>

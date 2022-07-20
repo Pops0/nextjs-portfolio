@@ -7,7 +7,11 @@ import "firebase/compat/analytics";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { Pagination } from "@mui/material";
+
+//Mui
+import { SvgIcon } from "@mui/material";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 firebase.initializeApp({
   apiKey: "AIzaSyBvBDRhTbx1tuJ46YTrBGO3p08Lgg0xQ_4",
@@ -27,28 +31,25 @@ if (typeof window !== "undefined") {
   console.log("windowError occured");
 }
 
-function GoToMainPage() {
-  return (location.href =
-    "https://resplendent-torte-204270.netlify.app/");
-}
-
 function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header>
-        <h1 title="Firebase React Chat">🔥⚛️💬</h1>
-        <SignOut />
-      </header>
-      <section>{user ? <ChatRoom /> : <SignIn />}</section>
-      <Pagination
-        count={2}
-        color="primary"
-        onChange={GoToMainPage()}
-      />
-      ;
-    </div>
+    <>
+      <div className="App">
+        <header>
+          <h1 title="Firebase React Chat">🔥⚛️💬</h1>
+          <SignOut />
+        </header>
+        <section>{user ? <ChatRoom /> : <SignIn />}</section>
+        <a href="javascript:history.back()" title="Main" className="paginationAnchor2">
+          <SvgIcon component={ChevronLeftIcon}></SvgIcon>
+        </a>
+        <a href="chat" title="Contact" className="paginationAnchor1">
+          <SvgIcon component={ChevronRightIcon}></SvgIcon>
+        </a>
+      </div>
+    </>
   );
 }
 
@@ -63,9 +64,6 @@ function SignIn() {
       <button className="sign-in" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
-      {/* <p className="FireBaseParagraph">
-        Do not violate the community guidelines or you will be banned for life!
-      </p> */}
     </>
   );
 }
