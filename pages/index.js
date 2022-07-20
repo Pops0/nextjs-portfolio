@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from "react";
 
-import { darkTheme, lightTheme } from "../customization/themes";
+import { darkTheme, lightTheme } from "./themes";
 
 import {
   Paper,
@@ -208,7 +208,7 @@ function Home() {
               <Typography
                 variant="h1"
                 align="center"
-                sx={{ fontSize: { lg: 90, md: 75, sm: 50, xs: 40 } }}
+                sx={{ fontSize: { lg: 90, md: 75, sm: 50, xs: 50 } }}
               >
                 Morne's Website
               </Typography>

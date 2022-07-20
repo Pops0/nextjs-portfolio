@@ -1,3 +1,7 @@
 lang messages sent en terwyl tik
+responsiveness firebase
 welcome website tick
-Seker maak oor pagination
+Seker maak oor pagination op chat page
+
+Ek moet doen:
+Download cv link
