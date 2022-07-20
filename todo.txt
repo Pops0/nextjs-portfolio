@@ -1,3 +1,0 @@
-fix sign in drawer cross
-drawer position
-foto

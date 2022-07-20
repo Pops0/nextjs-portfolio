@@ -47,6 +47,7 @@ function Home() {
   const [mode, setMode] = useState(false);
   const [flash, setFlash] = useState(false);
   // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [tSwitch, setTSwitch] = useState(false);
 
   function fetchElonAxios() {
     axios
@@ -118,6 +119,15 @@ function Home() {
     }
   }
 
+  function transitionFix() {
+    if (mode === false) {
+      setTSwitch(true);
+    } else if (mode === true) {
+      setTSwitch(false);
+      setTSwitch(true);
+    }
+  }
+
   useEffect(function () {
     document
       .querySelector(".search button")
@@ -143,26 +153,23 @@ function Home() {
       });
     }, 530);
 
+    transitionFix();
     typeEffect();
     fetchElonAxios();
+
+    console.log("Trans Switch: ", tSwitch);
   }, []);
-  // yes
+
   return (
     <div>
       <ThemeProvider theme={mode ? darkTheme : lightTheme}>
         <CssBaseline />
         <Grid
           container
-          columns={14}
-          direction="row"
           alignItems="center"
           justifyContent="center"
-          flexDirection={{ xs: "column", md: "row" }}
-          spacing={6}
-          padding={0}
         >
-          <>
-            {/* <Paper // Drawer
+          {/* <Paper // Drawer
             onClick={() => setIsDrawerOpen(true)}
             sx={{
               position: "fixed",
@@ -196,18 +203,18 @@ function Home() {
               <App />
             </Drawer>
           </Paper>*/}
-          </>
-          <Grid item xs={14}>
+          <Grid item xs={12}> 
             <Paper //main paper
               sx={{
                 bgcolor: "info.main",
                 position: "relative",
-                transform: "translateY(-12%)",
+                left: "50%",
+                top: "15.5%",
+                transform: "translate(-50%, -12%)",
                 height: "380px",
-                width: "100vw",
+                width: "100%",
                 marginTop: -1,
-                top: 20,
-                padding: 5,
+                padding: 7,
                 borderRadius: 15,
               }}
               elevation={15}
@@ -215,7 +222,7 @@ function Home() {
               <Typography
                 variant="h1"
                 align="center"
-                sx={{ fontSize: { lg: 90, md: 75, sm: 50, xs: 40 } }}
+                sx={{ fontSize: { lg: 90, md: 75, sm: 50, xs: 35 } }}
               >
                 Morne's Website
               </Typography>
@@ -224,13 +231,8 @@ function Home() {
                 {flash ? "|" : ""}
               </div>
               <div>
-                <Grid
-                  container
-                  alignItems="center"
-                  justifyContent="center"
-                  column={14}
-                >
-                  <Grid item xs={1}>
+                <Grid container alignItems="center" justifyContent={"center"}>
+                  <Grid>
                     <SvgIcon
                       component={Brightness5Icon}
                       inheritViewBox
@@ -242,7 +244,7 @@ function Home() {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid>
                     <Switch
                       checked={mode}
                       color="primary"
@@ -259,7 +261,7 @@ function Home() {
                       }}
                     ></Switch>
                   </Grid>
-                  <Grid item xs={1}>
+                  <Grid>
                     <SvgIcon
                       component={Brightness3Icon}
                       inheritViewBox
@@ -275,9 +277,8 @@ function Home() {
               </div>
             </Paper>
           </Grid>
-          <Grid item xs={12} md={6} direction="column">
-            <>
-              {/* <Fade
+          <Grid item xs={12} md={6}>
+            {/* <Fade
               in={tSwitch}
               // addEndListener={(node, done) => {
               //   node.addEventListener("transitionend", done, false);
@@ -287,7 +288,6 @@ function Home() {
                 exit: lightTheme.transitions.duration.leavingScreen,
               }}
             > */}
-            </>
             <Avatar //avatar
               alt="blank"
               src="../nothing.jpg"
@@ -295,12 +295,13 @@ function Home() {
                 position: "relative",
                 mt: { xs: 3, md: 5 },
                 mb: { xs: 5, md: 5 },
-                ml: { md: 12, large: 30, xl: 55, },
-                mr: { md: 12, large: 30, xl: 55, },
+                ml: { xs: 10.75, sm: 37, md: 19, lg: 45, xl: 50 },
+                mr: { xs: 10.75, sm: 37, md: 19, lg: 45, xl: 50 },
                 width: { xs: "250px", md: "220px" },
                 height: { xs: "250px", md: "220px" },
               }}
             ></Avatar>
+            {/* </Fade> */}
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper //about me paper
@@ -308,8 +309,15 @@ function Home() {
                 bgcolor: "primary.light",
                 position: "relative",
                 height: "100%",
-                width: "auto",
+                width: {
+                  xs: 350,
+                  sm: 600,
+                  md: 450,
+                  lg: 550,
+                },
                 mt: 3.5,
+                ml: { xs: 5, sm: 15, md: 5, lg: 10, xl: 20 },
+                mr: { xs: 5, sm: 15, md: 5, lg: 10, xl: 20 },
                 padding: 5,
                 borderRadius: 3,
               }}
@@ -317,13 +325,13 @@ function Home() {
               <Typography
                 variant="h3"
                 align="center"
-                sx={{ textDecoration: "underline", fontSize:{ xs: "20px", sm: "30px", md: "40px", large: "50px" }}}
+                sx={{ textDecoration: "underline" }}
                 mt={-3}
-                mb={1}
+                mb={-1.5}
               >
                 About Me:
               </Typography>
-              <Typography sx={{ fontSize:{ xs: "11px", sm: "15px", md: "20px", large: "25px" } }}>
+              <h3 className="aboutMe">
                 Hi! My name is Morné Cornelius, I am 17 and have had a computer
                 since I was 3 years old and had enjoyed computers since then, I
                 started with gaming and slowly began to get fond of how programs
@@ -339,91 +347,102 @@ function Home() {
                 substitute with audio work at a company for 2 years. I have
                 matric mathematics I still need to finish my matric language
                 subjects I am studying A-level IT and Computer Science next year
-              </Typography>
+              </h3>
             </Paper>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper //Weather Paper
-              elevation={4}
-              sx={{
-                bgcolor: "error.main",
-                position: "relative",
-                mt: 5,
-                mb: 3,
-                padding: 4,
-                borderRadius: 3,
-                width: "auto",
-              }}
-            >
-              <Grid container direction="row" alignItems="center">
-                <div className="search-card">
-                  <div className="search">
-                    <input
-                      type="text"
-                      className="search-bar"
-                      placeholder="Search City:"
-                    />
-                    <button>
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 1024 1024"
-                        height="1.5em"
-                        width="1.5em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path>
-                      </svg>
-                    </button>
+          <Grid container alignItems="center">
+            <Grid item xs={12} md={6}>
+              <Paper //Weather Paper
+                elevation={4}
+                sx={{
+                  bgcolor: "error.main",
+                  position: "relative",
+                  mt: 5,
+                  mb: 3,
+                  ml: { xs: 5, sm: 10, md: 8, lg: 30 },
+                  mr: { xs: 5, sm: 10, md: 8, lg: 30 },
+                  padding: 4,
+                  borderRadius: 3,
+                  width: { sm: "80%", lg: 500 },
+                }}
+              >
+                <Grid container direction="row" alignItems="center">
+                  <div className="search-card">
+                    <div className="search">
+                      <input
+                        type="text"
+                        className="search-bar"
+                        placeholder="Search City:"
+                      />
+                      <button>
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          strokeWidth="0"
+                          viewBox="0 0 1024 1024"
+                          height="1.5em"
+                          width="1.5em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </Grid>
-              <Grid item>
+                </Grid>
+                <Grid item>
+                  <div>
+                    <h1 className="city">City: </h1>
+                    <h1 className="temp">Degress of City:</h1>
+                    <h4 className="humidity">Humidity:</h4>
+                    <Grid container direction="row" alignItems="center">
+                      <img className="icon" />
+                      <h4 className="description">Description:</h4>
+                    </Grid>
+                  </div>
+                </Grid>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Paper //Elon Jet
+                elevation={4}
+                sx={{
+                  bgcolor: "secondary.main",
+                  position: "relative",
+                  mt: 3,
+                  mb: 5,
+                  ml: { xs: 11, sm: 17.5, md: 5, lg: 15, xl: 20 },
+                  mr: { xs: 11, sm: 17.5, md: 5, lg: 15, xl: 20 },
+                  padding: 4,
+                  borderRadius: 3,
+                  width: {
+                    xs: 250,
+                    sm: 500,
+                    md: 450,
+                    xl: 500,
+                  },
+                }}
+              >
                 <div>
-                  <h1 className="city">City: </h1>
-                  <h1 className="temp">Degress of City:</h1>
-                  <h4 className="humidity">Humidity:</h4>
-                  <Grid container direction="row" alignItems="center">
-                    <img className="icon" />
-                    <h4 className="description">Description:</h4>
-                  </Grid>
+                  <h2 className="elonHeader">
+                    {" "}
+                    Elon Musk Private Jet Location: {name}
+                  </h2>
+                  <a
+                    className="proofAnchor"
+                    href="https://globe.adsbexchange.com/?icao=a835af"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open Map
+                  </a>
                 </div>
-              </Grid>
-            </Paper>
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper //Elon Jet
-              elevation={4}
-              sx={{
-                bgcolor: "secondary.main",
-                position: "relative",
-                mt: 3,
-                mb: 5,
-                padding: 4,
-                borderRadius: 3,
-                width: "auto",
-              }}
-            >
-              <div>
-                <h2 className="elonHeader">
-                  {" "}
-                  Elon Musk Private Jet Location: {name}
-                </h2>
-                <a
-                  className="proofAnchor"
-                  href="https://globe.adsbexchange.com/?icao=a835af"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open Map
-                </a>
-              </div>
-            </Paper>
+          <Grid xs={3} item>
+            <Pagination count={2} color="primary" sx={{transform:"translateX(11%)"}}></Pagination>
           </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Pagination count={2} color="primary"></Pagination>
         </Grid>
       </ThemeProvider>
     </div>

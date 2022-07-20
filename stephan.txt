@@ -1,4 +1,1 @@
 lang messages sent en terwyl tik
-close button
-contact fixed position
-1400 x 1400

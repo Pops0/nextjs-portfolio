@@ -13,6 +13,10 @@ a.proofAnchor {
   font-size: x-large;
 }
 
+a.proofAnchor:hover {
+  color: rgb(255, 255, 255);
+}
+
 h2.elonHeader {
   font-weight: 500;
   font-size: xx-large;
@@ -255,7 +259,7 @@ button.sign-out {
   color: #282c34;
   background: rgba(255, 111, 111, 0.514);
   margin: 0 auto;
-  transform: translateX(80%);
+  transform: translateX(120%);
 }
 
 button.sign-out:hover {
@@ -266,6 +270,8 @@ ul,
 li {
   text-align: left;
   list-style: none;
+  justify-content: center;
+  
 }
 
 p.FireBaseParagraph {
