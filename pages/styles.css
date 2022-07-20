@@ -159,8 +159,10 @@ button:hover {
 }
 
 div.websiteWelcome {
-  display: inline;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   font-size: xx-large;
   font-family: monospace;
 }

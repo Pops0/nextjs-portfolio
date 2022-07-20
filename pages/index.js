@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from "react";
 
-import { darkTheme, lightTheme } from "./themes";
+import { darkTheme, lightTheme } from "../customization/themes";
 
 import {
   Paper,
