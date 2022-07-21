@@ -91,7 +91,7 @@ h2.elonHeader {
   color: white;
 }
 
-h3.aboutMe { 
+h3.aboutMe {
   font-weight: 200;
   font-size: larger;
 }
@@ -167,11 +167,15 @@ div.websiteWelcome {
   font-family: monospace;
 }
 
+div.CVDownload {
+  display: flex;
+}
+
 /* App.css import */
 
 body {
-    background-color: #282c34;
-  }
+  background-color: #282c34;
+}
 
 .App {
   text-align: center;
@@ -341,7 +345,6 @@ li {
   text-align: left;
   list-style: none;
   justify-content: center;
-  
 }
 
 p.FireBaseParagraph {

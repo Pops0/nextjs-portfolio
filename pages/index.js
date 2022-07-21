@@ -12,14 +12,17 @@ import {
   SvgIcon,
   Avatar,
   Switch,
+  Button,
 } from "@mui/material/";
 
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 import axios from "axios";
+import { Box } from "@mui/system";
 
 export default Home;
 
@@ -60,6 +63,46 @@ function Home() {
       .catch(function () {
         setName("API key invalid");
       });
+  }
+
+  // eslint-disable-next-line no-unused-vars
+
+  function DownloadCV() {
+    const onDownload = () => {
+      const link = document.createElement("a");
+      link.download = `myCV.pdf`;
+      link.href =
+        "https://drive.google.com/u/0/uc?id=1xilU1c8V9O-_Mz5b25tq-IOfi5Er09DS&export=download";
+      link.click();
+      console.log("test");
+    };
+    return (
+      <Box
+        onClick={onDownload}
+        sx={{
+          color: "primary.main",
+          border: "0px solid",
+          borderRadius: "50px",
+          mt: "12px",
+          mb: "-15px",
+          width: "60vw",
+        }}
+      >
+        <Button
+          component={FileDownloadIcon}
+          onClick={onDownload}
+          variant="contained"
+          color="primary"
+          sx={{
+            padding: "3px",
+            transform: "translate(-10px, 0px)",
+            width: "5px",
+            height: "27px",
+          }}
+        ></Button>
+        <span className="download">Download CV</span>
+      </Box>
+    );
   }
 
   const weather = {
@@ -342,6 +385,9 @@ function Home() {
                 matric mathematics I still need to finish my matric language
                 subjects I am studying A-level IT and Computer Science next year
               </Typography>
+              <div className="CVDownload">
+                <DownloadCV />
+              </div>
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
