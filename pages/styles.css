@@ -171,6 +171,11 @@ div.CVDownload {
   display: flex;
 }
 
+/* download button  */
+.css-aj4yee-MuiSvgIcon-root-MuiButtonBase-root-MuiButton-root {
+  min-width: 55px;
+}
+
 /* App.css import */
 
 body {

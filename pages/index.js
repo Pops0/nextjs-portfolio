@@ -80,7 +80,7 @@ function Home() {
       <Box
         onClick={onDownload}
         sx={{
-          color: "primary.main",
+          color: "secondary.main",
           border: "0px solid",
           borderRadius: "50px",
           mt: "12px",
@@ -92,15 +92,17 @@ function Home() {
           component={FileDownloadIcon}
           onClick={onDownload}
           variant="contained"
-          color="primary"
           sx={{
+            color: "primary.dark",
             padding: "3px",
             transform: "translate(-10px, 0px)",
-            width: "5px",
+            width: "0px",
             height: "27px",
           }}
         ></Button>
-        <span className="download">Download CV</span>
+        <Typography component="span" className="download" sx={{color: "primary.dark"}}>
+          Download CV
+        </Typography>
       </Box>
     );
   }
