@@ -100,7 +100,11 @@ function Home() {
             height: "27px",
           }}
         ></Button>
-        <Typography component="span" className="download" sx={{color: "primary.dark"}}>
+        <Typography
+          component="span"
+          className="download"
+          sx={{ color: "primary.dark" }}
+        >
           Download CV
         </Typography>
       </Box>
@@ -380,8 +384,8 @@ function Home() {
                 them. If I encounter a problem, I never leave it be. I taught
                 myself coding when I was 12 and ended up wanting to master
                 JavaScript I am still moderate to programming because I've never
-                made a serious dedication, I am hoping to get taught via a
-                company and achieve pure experience. I want to take my job
+                had a serious project to work on, I am hoping to get taught via
+                a company and achieve pure experience. I want to take my job
                 seriously I worked at a tuck shop for 4 years, I helped out as a
                 substitute with audio work at a company for 2 years. I have
                 matric mathematics I still need to finish my matric language
@@ -432,7 +436,7 @@ function Home() {
               <Grid item>
                 <div>
                   <h1 className="city">City: </h1>
-                  <h1 className="temp">Degress of City:</h1>
+                  <h1 className="temp">Degrees of City:</h1>
                   <h4 className="humidity">Humidity:</h4>
                   <Grid container direction="row" alignItems="center">
                     <img className="icon" />
