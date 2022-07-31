@@ -375,21 +375,16 @@ function Home() {
                   },
                 }}
               >
-                Hi! My name is Morné Cornelius, I am {myAge()} and have had a
-                computer since I was 3 years old and had enjoyed computers since
-                then, I started with gaming and slowly began to get fond of how
-                programs work, my father taught me the basics of how to operate
-                a computer, and I taught myself the rest, I have been stuck with
-                several problems over the few years but always ended up fixing
-                them. If I encounter a problem, I never leave it be. I taught
-                myself coding when I was 12 and ended up wanting to master
-                JavaScript I am still moderate to programming because I've never
-                had a serious project to work on, I am hoping to get taught via
-                a company and achieve pure experience. I want to take my job
-                seriously I worked at a tuck shop for 4 years, I helped out as a
-                substitute with audio work at a company for 2 years. I have
-                matric mathematics I still need to finish my matric language
-                subjects I am studying A-level IT and Computer Science next year
+                Hi! My name is Morné Cornelius. I am {myAge()}. I have had a computer since age
+                3 and have always been fascinated by them. I started with
+                gaming, but soon became interested in how software and
+                programming works. Most of what I know I taught myself. I have
+                learned that when I'm faced with a computer related problem I
+                can always find a solution to fix it. I never leave problems
+                unresolved. I started learning coding when I was 12 and recently
+                decided to focus on JavaScript. I am still new to the software
+                development process, but I believe that I am capable of learning
+                and growing as a developer on the job..
               </Typography>
               <div className="CVDownload">
                 <DownloadCV />
