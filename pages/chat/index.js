@@ -10,7 +10,6 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 
 //Mui
 import { SvgIcon } from "@mui/material";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 firebase.initializeApp({
@@ -43,10 +42,7 @@ function App() {
         </header>
         <section>{user ? <ChatRoom /> : <SignIn />}</section>
         <a href="javascript:history.back()" title="Main" className="paginationAnchor2">
-          <SvgIcon component={ChevronLeftIcon}></SvgIcon>
-        </a>
-        <a href="chat" title="Contact" className="paginationAnchor1">
-          <SvgIcon component={ChevronRightIcon}></SvgIcon>
+          <SvgIcon component={ChevronLeftIcon}></SvgIcon>Back
         </a>
       </div>
     </>

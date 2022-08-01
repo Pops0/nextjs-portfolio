@@ -18,7 +18,6 @@ import {
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 import axios from "axios";
@@ -36,7 +35,7 @@ const elonJetApiConfig = {
   method: "GET",
   url: `https://aerodatabox.p.rapidapi.com/flights/%7BsearchBy%7D/N628TS/${date}`,
   headers: {
-    "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
+    // "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
     "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com",
   },
 };
@@ -188,7 +187,6 @@ function Home() {
     fetchElonAxios();
   }, []);
 
-  // yes
   return (
     <div>
       <ThemeProvider theme={mode ? darkTheme : lightTheme}>
@@ -203,42 +201,6 @@ function Home() {
           spacing={6}
           padding={0}
         >
-          <>
-            {/* <Paper // Drawer
-            onClick={() => setIsDrawerOpen(true)}
-            sx={{
-              position: "fixed",
-              transform: {
-                xs: "translate(-50%, -350%)",
-                sm: "translate(-50%, -230%)",
-                md: "translate(-50%, -100%)",
-                lg: "translate(-50%, -250%)",
-                xl: "translate(-50%, -100%)",
-              },
-              bgcolor: "error.main",
-              width: "80px",
-              height: "200px",
-              borderRadius: "30px",
-              padding: 2,
-            }}
-          >
-            <Typography
-              variant="h5"
-              fontWeight="600"
-              sx={{ transform: "rotate(90deg) translate(100%,-70%)" }}
-              onClick={() => setIsDrawerOpen(true)}
-            >
-              Contact
-            </Typography>
-            <Drawer
-              anchor="left"
-              open={isDrawerOpen}
-              onClose={() => setIsDrawerOpen(false)}
-            >
-              <App />
-            </Drawer>
-          </Paper>*/}
-          </>
           <Grid item xs={14}>
             <Paper //main paper
               sx={{
@@ -326,8 +288,6 @@ function Home() {
                   position: "relative",
                   mt: { xs: 1, md: 5 },
                   mb: { xs: 1, md: 5 },
-                  // ml: { md: 20, large: 30 },
-                  // mr: { md: 20, large: 30 },
                   width: { xs: "175px", md: "220px" },
                   height: { xs: "175px", md: "220px" },
                   border: "0px solid",
@@ -358,10 +318,10 @@ function Home() {
                     sm: "30px",
                     md: "40px",
                     large: "50px",
+                    mt: "-3",
+                    mb: "1",
                   },
                 }}
-                mt={-3}
-                mb={1}
               >
                 About Me:
               </Typography>
@@ -392,7 +352,7 @@ function Home() {
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Paper //Weather Paper
+            <Paper // Weather Paper
               elevation={4}
               sx={{
                 bgcolor: "error.main",
@@ -407,6 +367,19 @@ function Home() {
               <Grid container direction="row" alignItems="center">
                 <div className="search-card">
                   <div className="search">
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        ml: "-7px",
+                        mt: "-15px",
+                        mb: "10px",
+                        fontWeight: "600",
+                        textDecoration: "underline",
+                      }}
+                    >
+                      {" "}
+                      Weather in a City:{" "}
+                    </Typography>
                     <input
                       type="text"
                       className="search-bar"
@@ -455,10 +428,9 @@ function Home() {
               }}
             >
               <div>
-                <h2 className="elonHeader">
-                  {" "}
-                  Elon Musk Private Jet Location: {name}
-                </h2>
+                <h3 className="elonHeader">
+                  Example of using REST API, tracks Elon Musk's aircraft: {name}
+                </h3>
                 <a
                   className="proofAnchor"
                   href="https://globe.adsbexchange.com/?icao=a835af"
@@ -473,11 +445,8 @@ function Home() {
         </Grid>
         <Grid item xs={12}>
           <div className="pagination_section">
-            <a href="#" title="Main" className="paginationAnchor">
-              <SvgIcon component={ChevronLeftIcon}></SvgIcon>
-            </a>
-            <a href="chat" title="Contact" className="paginationAnchor">
-              <SvgIcon component={ChevronRightIcon}></SvgIcon>
+            <a href="/chat" title="Contact" className="paginationAnchor">
+              Contact me via my chat app! <SvgIcon component={ChevronRightIcon}/>
             </a>
           </div>
         </Grid>
