@@ -72,7 +72,7 @@ function Home() {
       const link = document.createElement("a");
       link.download = `myCV.pdf`;
       link.href =
-        "https://drive.google.com/u/0/uc?id=1xilU1c8V9O-_Mz5b25tq-IOfi5Er09DS&export=download";
+        "https://uc6d6d12c3fe2be045dfbc1c198b.dl.dropboxusercontent.com/cd/0/get/BqMMVlxacOL5WZgZr2UjGyFYcePeVd41j50aqX5epKPCtqLIUmL1iRD4WCzPMc5fr66NQgZl0h1Y2BhtR-mwXCBZimo_8UPXSxApu_-MWYVUODFfXj36CWCWZZI8rwtZTET7wK2e7qUi6onHkk64iXs_nvWBJUpmTqBfkc2Jzr9yOWMl7E7fZewaVyv27r71eGo/file#";
       link.click();
       console.log("test");
     };
@@ -375,12 +375,12 @@ function Home() {
                   },
                 }}
               >
-                Hi! My name is Morné Cornelius. I am {myAge()}. I have had a computer since age
-                3 and have always been fascinated by them. I started with
-                gaming, but soon became interested in how software and
-                programming works. Most of what I know I taught myself. I have
-                learned that when I'm faced with a computer related problem I
-                can always find a solution to fix it. I never leave problems
+                Hi! My name is Morné Cornelius. I am {myAge()}. I have had a
+                computer since age 3 and have always been fascinated by them. I
+                started with gaming, but soon became interested in how software
+                and programming works. Most of what I know I taught myself. I
+                have learned that when I'm faced with a computer related problem
+                I can always find a solution to fix it. I never leave problems
                 unresolved. I started learning coding when I was 12 and recently
                 decided to focus on JavaScript. I am still new to the software
                 development process, but I believe that I am capable of learning
