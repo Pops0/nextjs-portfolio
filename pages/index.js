@@ -70,7 +70,7 @@ function Home() {
   function DownloadCV() {
     const onDownload = () => {
       const link = document.createElement("a");
-      link.download = `myCV.pdf`;
+      link.download = `Morne Cornelius CV.pdf`;
       link.href =
         "https://uc6d6d12c3fe2be045dfbc1c198b.dl.dropboxusercontent.com/cd/0/get/BqMMVlxacOL5WZgZr2UjGyFYcePeVd41j50aqX5epKPCtqLIUmL1iRD4WCzPMc5fr66NQgZl0h1Y2BhtR-mwXCBZimo_8UPXSxApu_-MWYVUODFfXj36CWCWZZI8rwtZTET7wK2e7qUi6onHkk64iXs_nvWBJUpmTqBfkc2Jzr9yOWMl7E7fZewaVyv27r71eGo/file#";
       link.click();
