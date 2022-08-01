@@ -384,7 +384,7 @@ function Home() {
                 unresolved. I started learning coding when I was 12 and recently
                 decided to focus on JavaScript. I am still new to the software
                 development process, but I believe that I am capable of learning
-                and growing as a developer on the job..
+                and growing as a developer on the job.
               </Typography>
               <div className="CVDownload">
                 <DownloadCV />
