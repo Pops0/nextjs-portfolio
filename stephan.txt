@@ -1,8 +1,4 @@
 lang messages sent en terwyl tik
 responsiveness firebase
-welcome website tick
-Seker maak oor pagination op chat page
 
-Ek moet doen:
-Download cv link
-63a3b24122mshcc616ebee2fabc3p1b129ajsn794df9495794
+Ander source
