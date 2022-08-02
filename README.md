@@ -32,7 +32,8 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
     development process, but I believe that I am capablelearning
     and growing as a developer on the job.
 
-On my website I wrote a basic function displaying my live current age
+## 
+    On my website I wrote a basic function displaying my live current age
 
-I learnt the importance of the order in code, how it works, why some things render beforehand 
+    I learnt the importance of the order in code, how it works, why some things render beforehand 
 
