@@ -28,11 +28,11 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
 
 ## I used two APIs while building this website:
 
-• Openweathermap
+ - Openweathermap
     - Used to fetch city's weather info
     - I used [this youtube video](https://www.youtube.com/watch?v=WZNG8UomjSI) to teach me how this API works
 
-• Aerodatabox
+ - Aerodatabox
     - I used this API to track Elon Musk's Private Jet 
     - I taught myself how to use this API
 
