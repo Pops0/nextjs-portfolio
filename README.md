@@ -12,6 +12,7 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
     • Create a light and dark mode
     • Resize boxes and the color of the text
     • Customization of the background
+    `![this youtube video](https://www.youtube.com/watch?v=WZNG8UomjSI)`
 
 ## I used two APIs while building this website:
     • Openweathermap
