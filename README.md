@@ -18,6 +18,7 @@ development process, but I believe that I am capablelearning
 and growing as a developer on the job.
 
 I used a library called Material UI v5 <img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white"/>
+With the help of the MUI website it explained exactly how every of their components work
 
 ## I used it to
 
@@ -38,11 +39,13 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
 
 ## What I learnt via this experience:
 - I learnt the importance of the order in code and how it works
+- Using the browser developer console to edit my website live
 - How to use React hooks and how it works.
 - Setting up domain and making my code live
 - Managing a git profile
 - Implementing public APIs via RapidApi
 - Implementing a Firebase Projects and managing it via the console
+- While coding the website I realized how easy CSS was, learnt it and started mixing it in the CSS with the library
 
 ## Functions in this project: 
 - A Home function returning all values and UI
