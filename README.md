@@ -37,7 +37,18 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
     - I taught myself how to use this API
 
 ## What I learnt:
-On my website I wrote a basic function displaying my live current age
 I learnt the importance of the order in code, how it works, why some things render beforehand 
-How to use 
+How to use.
+Setting up domain and making my code live
+Managing my git profile
 
+#Functions in this project: 
+- A Home function returning all values and UI
+- A function displaying of my current live age
+- A function searching, retrieving and displaying API data
+- A typing effect turning a variable true and false every few miliseconds creating a flickering effect
+- An app function returning all the firebase chat data and components
+- A sign into google function remembering your chat data
+- A sign out of google function
+- A chatroom function containing all data stored on the database
+- A chat message function allowing users to display user profile 
