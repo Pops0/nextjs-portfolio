@@ -38,6 +38,9 @@ With the help of the MUI website it explained exactly how every of their compone
     - I taught myself how to use this API
 
 ## What I learnt via this experience:
+- Using the terminal in my IDE
+- Git, node and WSL console command 
+- Git push and pull
 - I learnt the importance of the order in code and how it works
 - Using the browser developer console to edit my website live
 - How to use React hooks and how it works.
