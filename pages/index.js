@@ -12,16 +12,13 @@ import {
   SvgIcon,
   Avatar,
   Switch,
-  Button,
 } from "@mui/material/";
 
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 import axios from "axios";
-import { Box } from "@mui/system";
 
 export default Home;
 
@@ -65,50 +62,6 @@ function Home() {
   }
 
   // eslint-disable-next-line no-unused-vars
-
-  function DownloadCV() {
-    const onDownload = () => {
-      const link = document.createElement("a");
-      link.download = `Morne Cornelius CV.pdf`;
-      link.href =
-        "https://uc6d6d12c3fe2be045dfbc1c198b.dl.dropboxusercontent.com/cd/0/get/BqMMVlxacOL5WZgZr2UjGyFYcePeVd41j50aqX5epKPCtqLIUmL1iRD4WCzPMc5fr66NQgZl0h1Y2BhtR-mwXCBZimo_8UPXSxApu_-MWYVUODFfXj36CWCWZZI8rwtZTET7wK2e7qUi6onHkk64iXs_nvWBJUpmTqBfkc2Jzr9yOWMl7E7fZewaVyv27r71eGo/file#";
-      link.click();
-      console.log("test");
-    };
-    return (
-      <Box
-        onClick={onDownload}
-        sx={{
-          color: "secondary.main",
-          border: "0px solid",
-          borderRadius: "50px",
-          mt: "12px",
-          mb: "-15px",
-          width: "60vw",
-        }}
-      >
-        <Button
-          component={FileDownloadIcon}
-          onClick={onDownload}
-          variant="contained"
-          sx={{
-            color: "primary.dark",
-            padding: "3px",
-            transform: "translate(-10px, 0px)",
-            width: "0px",
-            height: "27px",
-          }}
-        ></Button>
-        <Typography
-          component="span"
-          className="download"
-          sx={{ color: "primary.dark" }}
-        >
-          Download CV
-        </Typography>
-      </Box>
-    );
-  }
 
   const weather = {
     //fetch en display weather
@@ -347,7 +300,7 @@ function Home() {
                 and growing as a developer on the job.
               </Typography>
               <div className="CVDownload">
-                <DownloadCV />
+                <a href="https://uc6d6d12c3fe2be045dfbc1c198b.dl.dropboxusercontent.com/cd/0/get/BqMMVlxacOL5WZgZr2UjGyFYcePeVd41j50aqX5epKPCtqLIUmL1iRD4WCzPMc5fr66NQgZl0h1Y2BhtR-mwXCBZimo_8UPXSxApu_-MWYVUODFfXj36CWCWZZI8rwtZTET7wK2e7qUi6onHkk64iXs_nvWBJUpmTqBfkc2Jzr9yOWMl7E7fZewaVyv27r71eGo/file#" />
               </div>
             </Paper>
           </Grid>
@@ -377,8 +330,7 @@ function Home() {
                         textDecoration: "underline",
                       }}
                     >
-                      {" "}
-                      Weather in a City:{" "}
+                      Weather in a City:
                     </Typography>
                     <input
                       type="text"

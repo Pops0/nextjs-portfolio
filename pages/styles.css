@@ -56,16 +56,14 @@ a.paginationAnchor2 {
   border-radius: 999px;
   background: #00000098;
   cursor: pointer;
-  transition: 0.25s ease;
-  display: inline-block;
+  transition: .25s ease;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   text-decoration: none;
   color: #fff;
   margin-top: 5px;
-  padding: 15px;
-  padding-right: 25px;
+  padding: 15px 25px 15px 15px;
 }
 
 div.pagination_section:hover {
