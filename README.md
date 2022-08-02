@@ -23,7 +23,7 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
     - I taught myself how to use this API
 
 ## My Bio:
-    Hi! My name is Morné Cornelius. I am (age) . I have had a
+    Hi! My name is Morné Cornelius. I am (age). I have had a
     computer since age 3 and have always been fascinated by thI
     started with gaming, but soon became interested in software
     and programming works. Most of what I know I taught myself. I
