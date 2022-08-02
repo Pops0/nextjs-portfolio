@@ -37,10 +37,12 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
     - I taught myself how to use this API
 
 ## What I learnt via this experience:
-- I learnt the importance of the order in code, how it works, why some things render beforehand 
+- I learnt the importance of the order in code and how it works
 - How to use React hooks and how it works.
 - Setting up domain and making my code live
 - Managing a git profile
+- Implementing public APIs via RapidApi
+- Implementing a Firebase Projects and managing it via the console
 
 ## Functions in this project: 
 - A Home function returning all values and UI
