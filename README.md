@@ -21,10 +21,10 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
 
 ## I used it to
 
-   • Make my website responsive using Grids
-   • Create a light and dark mode
-   • Resize boxes and the color of the text
-   • Customization of the background
+   - Make my website responsive using Grids
+   - Create a light and dark mode
+   - Resize boxes and the color of the text
+   - Customization of the background
 
 ## I used two APIs while building this website:
 
