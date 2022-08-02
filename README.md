@@ -1,13 +1,13 @@
 <h1>Portfolio Website </h1>
-   This is my portfolio/cv website
-    It took me about a few weeks to build
-    It took a few weeks to build this website, but it taught me more than I would've thought
-    I got taught a lot via this experience
-    I did a lot of fault finding via building this website and searching on the internet
+
+   This is my portfolio/resume website
+   It took me about a few weeks to build although most of my time went to learning how to code efficiently
+   I got taught a lot via this experience
+   I did a lot of fault finding via building this website and searching on the internet
 
 ## My Bio:
-Hi! My name is Morné Cornelius. I am (age). I have had a
-computer since age 3 and have always been fascinated by thI
+Hi! My name is Morné Cornelius. I have had a
+computer since age 3 and have always been fascinated by tech, I
 started with gaming, but soon became interested in software
 and programming works. Most of what I know I taught myself. I
 have learned that when I'm faced with a computer relaproblem
@@ -21,10 +21,10 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
 
 ## I used it to
 
-    • Make my website responsive using Grids
-    • Create a light and dark mode
-    • Resize boxes and the color of the text
-    • Customization of the background
+   • Make my website responsive using Grids
+   • Create a light and dark mode
+   • Resize boxes and the color of the text
+   • Customization of the background
 
 ## I used two APIs while building this website:
 
@@ -36,13 +36,13 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
     - I used this API to track Elon Musk's Private Jet 
     - I taught myself how to use this API
 
-## What I learnt:
-I learnt the importance of the order in code, how it works, why some things render beforehand 
-How to use.
-Setting up domain and making my code live
-Managing my git profile
+## What I learnt via this experience:
+- I learnt the importance of the order in code, how it works, why some things render beforehand 
+- How to use React hooks and how it works.
+- Setting up domain and making my code live
+- Managing a git profile
 
-#Functions in this project: 
+## Functions in this project: 
 - A Home function returning all values and UI
 - A function displaying of my current live age
 - A function searching, retrieving and displaying API data
