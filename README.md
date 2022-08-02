@@ -1,8 +1,9 @@
-This is my portfolio/cv website
-It took me about a few weeks to build
-It took a few weeks to build this website, but it taught me more than I would've thought
-I got taught a lot via this experience
-I did a lot of fault finding via building this website and searching on the internet
+##
+   This is my portfolio/cv website
+    It took me about a few weeks to build
+    It took a few weeks to build this website, but it taught me more than I would've thought
+    I got taught a lot via this experience
+    I did a lot of fault finding via building this website and searching on the internet
 
 ## My Bio:
 Hi! My name is Morné Cornelius. I am (age). I have had a
