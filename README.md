@@ -6,7 +6,8 @@ I did a lot of fault finding via building this website and searching on the inte
 
 I used a library called Material UI v5 <img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white"/>
 
-## I used it to:
+## I used it to
+
     • Make my website responsive using Grids
     • Create a light and dark mode
     • Resize boxes and the color of the text
@@ -15,7 +16,7 @@ I used a library called Material UI v5 <img src="https://img.shields.io/badge/Ma
 ## I used two APIs while building this website:
     • Openweathermap
         - Used to fetch city's weather info
-        - I used `![this youtube video](https://www.youtube.com/watch?v=WZNG8UomjSI)` to teach me how this API works
+        - I used `[this youtube video](https://www.youtube.com/watch?v=WZNG8UomjSI)` to teach me how this API works
     • Aerodatabox
         - I used this API to track Elon Musk's Private Jet 
         - I taught myself how to use this API
