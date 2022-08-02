@@ -36,7 +36,6 @@ development process, but I believe that I am capablelearning
 and growing as a developer on the job.
 
 ## 
-    On my website I wrote a basic function displaying my live current age
-
-    I learnt the importance of the order in code, how it works, why some things render beforehand 
+On my website I wrote a basic function displaying my live current age
+I learnt the importance of the order in code, how it works, why some things render beforehand 
 
