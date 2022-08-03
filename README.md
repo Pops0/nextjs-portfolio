@@ -37,7 +37,7 @@ With the help of the MUI website it explained exactly how every of their compone
 
  - [Aerodatabox](https://rapidapi.com/aedbx-aedbx/api/aerodatabox/)
     - I used this API to track Elon Musk's Private Jet 
-      -[Here is proof of the information I am fetching](https://globe.adsbexchange.com/?icao=a835af)
+       -[Here is proof of the information I am fetching](https://globe.adsbexchange.com/?icao=a835af)
     - With the use of this API I used the information of [Globe ADSB exchange](globe.adsbexchange.com)
 
 ## What I learnt via this experience:
@@ -45,6 +45,8 @@ With the help of the MUI website it explained exactly how every of their compone
 - Using the build-in terminal in my IDE
 - Using Git, node and WSL console command I modified
    - Git push and pull
+   - Node installing modules
+   - WSL to use yarn to add modules
 - I learnt the importance of the order in code and how it works
 - Using the browser developer console to edit my website live 
 - How to use React hooks and implement it into my code
