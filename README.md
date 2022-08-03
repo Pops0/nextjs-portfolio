@@ -27,7 +27,7 @@ With the help of the MUI website it explained exactly how every of their compone
    - Create a light and dark mode using a set of 2 palettes
    - Resize components and the color of the text
    - Customization of the body
-   - I did most of the styling with MUI but did a small amount of touch-ups with CSS
+   - I did most of the styling with MUI but made a small amount of changes with CSS
 
 ## I used two APIs while building this website:
 
