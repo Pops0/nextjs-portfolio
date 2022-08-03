@@ -18,6 +18,7 @@ development process, but I believe that I am capablelearning
 and growing as a developer on the job.
 
 I used a library called [Material UI v5](mui.com) <img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white"/>
+
 With the help of the MUI website it explained exactly how every of their components work
 
 ## I used it to
