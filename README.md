@@ -33,7 +33,7 @@ With the help of the MUI website it explained exactly how every of their compone
 
  - [Openweathermap](https://openweathermap.org/api)
     - Used to fetch city's weather info (Degrees, Humididty, Description with Icon)
-    - I used [this youtube video](https://www.youtube.com/watch?v=WZNG8UomjSI) to teach me how this API works
+    - I used [this youtube video](https://www.youtube.com/watch?v=WZNG8UomjSI) to teach me how this API works and how to fetch information about various cities
 
  - [Aerodatabox](https://rapidapi.com/aedbx-aedbx/api/aerodatabox/)
     - I used this API to track Elon Musk's Private Jet 
