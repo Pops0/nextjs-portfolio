@@ -23,32 +23,33 @@ With the help of the MUI website it explained exactly how every of their compone
 ## I used it to
 
    - Make my website responsive using Grids
-   - Create a light and dark mode
-   - Resize boxes and the color of the text
-   - Customization of the background
+   - Create a light and dark mode using a set of 2 palettes
+   - Resize components and the color of the text
+   - Customization of the body
+   - I did most of the styling with MUI but did a small amount of touch-ups with CSS
 
 ## I used two APIs while building this website:
 
- - Openweathermap
-    - Used to fetch city's weather info
+ - [Openweathermap](https://openweathermap.org/api)
+    - Used to fetch city's weather info (Degrees, Humididty, Description with Icon)
     - I used [this youtube video](https://www.youtube.com/watch?v=WZNG8UomjSI) to teach me how this API works
 
- - Aerodatabox
+ - [Aerodatabox](https://rapidapi.com/aedbx-aedbx/api/aerodatabox/)
     - I used this API to track Elon Musk's Private Jet 
-    - I taught myself how to use this API
+      -[Here is proof of the information I am fetching](https://globe.adsbexchange.com/?icao=a835af)
+    - I experimented with the use of this API by using [Globe ADSB exchange](globe.adsbexchange.com) and tracking aircrafts
 
 ## What I learnt via this experience:
-- Using the terminal in my IDE
-- Git, node and WSL console command 
-- Git push and pull
+
+- Using the build-in terminal in my IDE
+- Using Git, node and WSL console command I modified
+   - Git push and pull
 - I learnt the importance of the order in code and how it works
-- Using the browser developer console to edit my website live
-- How to use React hooks and how it works.
+- Using the browser developer console to edit my website live 
+- How to use React hooks and implement it into my code
 - Setting up domain and making my code live
-- Managing a git profile
-- Implementing public APIs via RapidApi
-- Implementing a Firebase Projects and managing it via the console
-- While coding the website I realized how easy CSS was, learnt it and started mixing it in the CSS with the library
+- Implementing public APIs via [RapidApi](https://rapidapi.com/hub)
+- Implementing a Firebase Projects and managing it via the [Firebase console](https://firebase.google.com/?gclid=Cj0KCQjwuaiXBhCCARIsAKZLt3k49fHYwk9FB_AGm033bEqzQTrxlTeEUSHd__Kd-uO7JCJ5WBWPK4MaAneIEALw_wcB&gclsrc=aw.ds)
 
 ## Functions in this project: 
 - A Home function returning all values and UI
