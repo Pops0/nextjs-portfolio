@@ -37,7 +37,7 @@ With the help of the MUI website it explained exactly how every of their compone
 
  - [Aerodatabox](https://rapidapi.com/aedbx-aedbx/api/aerodatabox/)
     - I used this API to track Elon Musk's Private Jet 
-      -[Here is proof of the information I am fetching](https://globe.adsbexchange.com/?icao=a835af)
+    - [Here is proof of the information I am fetching](https://globe.adsbexchange.com/?icao=a835af)
     - With the use of this API I used the information of [Globe ADSB exchange](globe.adsbexchange.com)
 
 ## What I learnt via this experience:
