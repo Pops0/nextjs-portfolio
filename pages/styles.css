@@ -66,6 +66,11 @@ a.paginationAnchor2 {
   padding: 15px 25px 15px 15px;
 }
 
+a.CV-anchor {
+  text-decoration: none;
+  color:#FFF
+}
+
 div.pagination_section:hover {
   border-radius: 10px;
 }
@@ -174,6 +179,7 @@ div.CVDownload {
 /* download button  */
 .css-aj4yee-MuiSvgIcon-root-MuiButtonBase-root-MuiButton-root {
   min-width: 55px;
+  
 }
 
 /* App.css import */
@@ -181,7 +187,7 @@ div.CVDownload {
 /* Back button V */
 .css-yoei7b-MuiSvgIcon-root-MuiSvgIcon-root {
   display: inline;
-  margin: -6px;
+  /* margin: -20px; */
   margin-right: 5px;
 }
 

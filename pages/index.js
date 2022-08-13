@@ -17,6 +17,7 @@ import {
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import DownloadIcon from "@mui/icons-material/Download";
 
 import axios from "axios";
 
@@ -300,7 +301,28 @@ function Home() {
                 and growing as a developer on the job.
               </Typography>
               <div className="CVDownload">
-                <a href="https://uc6d6d12c3fe2be045dfbc1c198b.dl.dropboxusercontent.com/cd/0/get/BqMMVlxacOL5WZgZr2UjGyFYcePeVd41j50aqX5epKPCtqLIUmL1iRD4WCzPMc5fr66NQgZl0h1Y2BhtR-mwXCBZimo_8UPXSxApu_-MWYVUODFfXj36CWCWZZI8rwtZTET7wK2e7qUi6onHkk64iXs_nvWBJUpmTqBfkc2Jzr9yOWMl7E7fZewaVyv27r71eGo/file#" />
+                <Paper
+                  sx={{
+                    m: "7.5px",
+                    ml: "-10px",
+                    mt: "15px",
+                    mb: "-15px",
+                    bgcolor: "secondary.main",
+                    padding: "4px",
+                    paddingRight: "7.5px",
+                  }}
+                >
+                  <a
+                    className="CV-anchor"
+                    href="https://uc6d6d12c3fe2be045dfbc1c198b.dl.dropboxusercontent.com/cd/0/get/BqMMVlxacOL5WZgZr2UjGyFYcePeVd41j50aqX5epKPCtqLIUmL1iRD4WCzPMc5fr66NQgZl0h1Y2BhtR-mwXCBZimo_8UPXSxApu_-MWYVUODFfXj36CWCWZZI8rwtZTET7wK2e7qUi6onHkk64iXs_nvWBJUpmTqBfkc2Jzr9yOWMl7E7fZewaVyv27r71eGo/file#"
+                  >
+                    <SvgIcon
+                      sx={{ mt: "5px", mb:"-5px", width: "20px", height: "20px", mr: "7.5px" }}
+                      component={DownloadIcon}
+                    ></SvgIcon>
+                    Download my CV
+                  </a>
+                </Paper>
               </div>
             </Paper>
           </Grid>
@@ -398,7 +420,8 @@ function Home() {
         <Grid item xs={12}>
           <div className="pagination_section">
             <a href="/chat" title="Contact" className="paginationAnchor">
-              Contact me via my chat app! <SvgIcon component={ChevronRightIcon}/>
+              Contact me via my chat app!{" "}
+              <SvgIcon component={ChevronRightIcon} />
             </a>
           </div>
         </Grid>
