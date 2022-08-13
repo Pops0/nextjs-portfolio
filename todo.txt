@@ -1,5 +1,0 @@
-lang messages sent en terwyl tik
-responsiveness firebase
-
-cv
-3 projects
