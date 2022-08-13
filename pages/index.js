@@ -33,7 +33,7 @@ const elonJetApiConfig = {
   method: "GET",
   url: `https://aerodatabox.p.rapidapi.com/flights/%7BsearchBy%7D/N628TS/${date}`,
   headers: {
-    // "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
+    "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
     "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com",
   },
 };
@@ -59,6 +59,7 @@ function Home() {
       })
       .catch(function () {
         setName("API key invalid");
+        console.log(this.data)
       });
   }
 

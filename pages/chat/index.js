@@ -37,13 +37,10 @@ function App() {
     <>
       <div className="App">
         <header>
-          <h1 title="Firebase React Chat">🔥⚛️💬</h1>
+          <h1 className="FireBaseTitle" title="Firebase React Chat">🔥⚛️💬</h1>
           <SignOut />
         </header>
         <section>{user ? <ChatRoom /> : <SignIn />}</section>
-        <a href="javascript:history.back()" title="Main" className="paginationAnchor2">
-          <SvgIcon component={ChevronLeftIcon}></SvgIcon>Back
-        </a>
       </div>
     </>
   );
@@ -118,6 +115,9 @@ function ChatRoom() {
         <button className="sendbutton" type="submit" disabled={!formValue}>
           🕊️
         </button>
+        <a href="javascript:history.back()" title="Main" className="paginationAnchor2">
+          <SvgIcon component={ChevronLeftIcon}></SvgIcon>Back
+        </a>
       </form>
     </>
   );
