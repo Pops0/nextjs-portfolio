@@ -243,6 +243,15 @@ main {
   flex-direction: column;
 }
 
+@media (max-width: 768px) {
+  main {
+    padding-top: 10px;
+    padding-right: 1px;
+    padding-bottom: 10px;
+    padding-left: 1px;
+  }
+}
+
 main::-webkit-scrollbar {
   width: 0.25rem;
 }
