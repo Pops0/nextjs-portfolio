@@ -34,6 +34,7 @@ const elonJetApiConfig = {
   url: `https://aerodatabox.p.rapidapi.com/flights/%7BsearchBy%7D/N628TS/${date}`,
   headers: {
     "X-RapidAPI-Key": "23079cc905msh06895b2835f343fp12649bjsn696fb0859864",
+    // "X-RapidAPI-Key": "727fb8cafbmsha9709d1437adce1p1ea8cajsn33a630f15a6b", // backup API 
     "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com",
   },
 };
@@ -54,12 +55,11 @@ function Home() {
         if (response.data && response.data.length > 0) {
           setName(response.data[0].arrival.airport.name);
         } else {
-          setName("No flights today");
+          setName("Currently Airborne");
         }
       })
       .catch(function () {
-        setName("API key invalid");
-        console.log(this.data)
+        setName("No flights today");
       });
   }
 
@@ -99,7 +99,7 @@ function Home() {
   function myAge() {
     //calculates my age
     const today = new Date();
-    const birthDate = new Date(2004, 8, 6);
+    const birthDate = new Date(2004, 7, 6); //minus 1 from month
     let age = today.getFullYear() - birthDate.getFullYear();
     const month = today.getMonth() - birthDate.getMonth();
     if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
@@ -315,7 +315,7 @@ function Home() {
                 >
                   <a
                     className="CV-anchor"
-                    href="https://uc6d6d12c3fe2be045dfbc1c198b.dl.dropboxusercontent.com/cd/0/get/BqMMVlxacOL5WZgZr2UjGyFYcePeVd41j50aqX5epKPCtqLIUmL1iRD4WCzPMc5fr66NQgZl0h1Y2BhtR-mwXCBZimo_8UPXSxApu_-MWYVUODFfXj36CWCWZZI8rwtZTET7wK2e7qUi6onHkk64iXs_nvWBJUpmTqBfkc2Jzr9yOWMl7E7fZewaVyv27r71eGo/file#"
+                    href="https://uc8cfc693c5d0ab9c795b8e07da0.dl.dropboxusercontent.com/cd/0/get/Bq-EcGi1gvboJVay4bH3KC6HCdJdxjyRaFeLKOvx4NZ-kP-p54T-QIeaGF_7KW4nb-edql9sTgO0LVlSk7A8HcZMQTICngEQAYFsfdJbYybkIv9gvFfb1aIhUKx8bpNGc5lQ7dHEH_0WZjZOUqYaByA0ZBMOienu1yXSfs-a6kk3NKhk2QDZiXEvK4lzkiyiF5I/file#"
                   >
                     <SvgIcon
                       sx={{ mt: "5px", mb:"-5px", width: "20px", height: "20px", mr: "7.5px" }}
