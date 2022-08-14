@@ -315,7 +315,7 @@ function Home() {
                 >
                   <a
                     className="CV-anchor"
-                    href="https://uc8cfc693c5d0ab9c795b8e07da0.dl.dropboxusercontent.com/cd/0/get/Bq-EcGi1gvboJVay4bH3KC6HCdJdxjyRaFeLKOvx4NZ-kP-p54T-QIeaGF_7KW4nb-edql9sTgO0LVlSk7A8HcZMQTICngEQAYFsfdJbYybkIv9gvFfb1aIhUKx8bpNGc5lQ7dHEH_0WZjZOUqYaByA0ZBMOienu1yXSfs-a6kk3NKhk2QDZiXEvK4lzkiyiF5I/file#"
+                    href="https://www.dropbox.com/s/ren1af7xpt4odki/Morn%C3%A9%20Cornelius%20CV.pdf?dl=0"
                   >
                     <SvgIcon
                       sx={{ mt: "5px", mb:"-5px", width: "20px", height: "20px", mr: "7.5px" }}
