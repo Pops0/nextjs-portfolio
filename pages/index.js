@@ -321,7 +321,7 @@ function Home() {
                       sx={{ mt: "5px", mb:"-5px", width: "20px", height: "20px", mr: "7.5px" }}
                       component={DownloadIcon}
                     ></SvgIcon>
-                    Download my CV
+                    View or Download my CV
                   </a>
                 </Paper>
               </div>
