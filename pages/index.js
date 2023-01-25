@@ -315,7 +315,7 @@ function Home() {
                 >
                   <a
                     className="CV-anchor"
-                    href="https://www.dropbox.com/s/ren1af7xpt4odki/Morn%C3%A9%20Cornelius%20CV.pdf?dl=0"
+                    href="https://www.dropbox.com/s/clw43i6izew20mt/MorneCorneliusResume.pdf?dl=0"
                   >
                     <SvgIcon
                       sx={{ mt: "5px", mb:"-5px", width: "20px", height: "20px", mr: "7.5px" }}
